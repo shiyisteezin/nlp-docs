@@ -106,10 +106,10 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: Wikitten
 
-url: https://shiyis.github.io/nlp-docs
+url: https://shiyisteezin.github.io/nlp-docs
 root: /nlp-docs/
 
 deploy:
   type: git
-  repo: https://github.com/shiyis/nlp-docs.git
+  repo: https://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@github.com/shiyisteezin/nlp-docs.git
   branch: main  # or main if you are using the main branch
