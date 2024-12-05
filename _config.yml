@@ -111,5 +111,5 @@ root: /nlp-docs/
 
 deploy:
   type: git
-  repo: https://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@github.com/shiyisteezin/nlp-docs.git
+  repo: https://github.com/shiyisteezin/nlp-docs.git
   branch: main  # or main if you are using the main branch
