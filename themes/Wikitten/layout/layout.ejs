@@ -1,0 +1,27 @@
+<%- partial('common/head') %>
+<body>
+    <div id="container">
+        <%- partial('common/header') %>
+        <div class="outer">
+            <!-- Left Sidebar -->
+            <% if (theme.customize.sidebar) { %>
+                <aside id="sidebar-left">
+                    <%- partial('common/sidebar') %>
+                </aside>
+            <% } %>
+
+            <!-- Main Content -->
+            <section id="main">
+                <%- body %>
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside id="sidebar-right">
+                <%- partial('common/right_sidebar', { page: page }) %>
+            </aside>
+
+        </div>
+        <%- partial('common/footer', null, {cache: !config.relative_link}) %>
+        <%- partial('common/scripts') %>
+    </div>
+</html>

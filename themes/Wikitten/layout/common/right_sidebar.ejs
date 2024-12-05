@@ -1,0 +1,52 @@
+<aside id="right-sidebar">
+    <div class="timeline-container">
+        <%
+        var lastYear, lastMonth;
+        site.posts.sort('date', -1).each(function(post) {
+            var year = post.date.format('YYYY');
+            var month = post.date.format('YYYY-MM');
+
+            if (lastYear !== year) {
+                if (lastMonth) { %>
+                    </div> <!-- Close previous month's timeline-posts -->
+                <% }
+                lastYear = year;
+        %>
+                <!-- Year Marker -->
+                <div class="timeline-row timeline-year">
+                    <span class="timeline-icon"><i class="fa fa-calendar-o"></i></span>
+                    <h2 class="timeline-title"><%= year %></h2>
+                </div>
+        <%
+            }
+
+            if (lastMonth !== month) {
+                if (lastMonth) { %>
+                    </div> <!-- Close previous month's timeline-posts -->
+                <% }
+                lastMonth = month;
+        %>
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title"><%= month %> (<%= site.posts.filter(function(p) { return p.date.format('YYYY-MM') === month; }).length %>)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        <% } %>
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="<%= post.permalink %>"><%= post.title %></a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> <%= post.date.format('YYYY-MM-DD') %></span>
+                        <span><i class="fa fa-folder-open"></i> <%= post.categories.map(function(cat) { return cat.name; }).join(', ') %></span>
+                    </div>
+                </div>
+            </div>
+
+        <% }); %>
+        </div> <!-- Close the last month's timeline-posts -->
+    </div>
+</aside>

@@ -1,0 +1,88 @@
+# Menus
+menu:
+  # Content: /
+  # Tags: /tags
+
+# Customize
+customize:
+    logo:
+        enabled: false
+        width: 40
+        height: 40
+        url: /logo.png
+    profile:
+        enabled: false # Whether to show profile bar
+        avatar: # css/images/avatar.png
+
+    highlight: monokai
+    sidebar: left # sidebar position, options: left, right
+    category_perExpand: false # enable article categories list per expanding
+    thumbnail: true # enable posts thumbnail, options: true, false
+    favicon: /favicon.ico # path to favicon
+    default_index_file: index.md # if this, it will display at site index instead of default index page
+    social_link_tooltip: true # enable the social link tooltip, options: true, false
+
+# Widgets
+widgets: # default use category only
+    - category
+    - archive
+    # - recent_posts
+    - tag
+    # - tagcloud
+    # - links
+
+
+## Auto creat excerpt with not <!--more-->
+## Enable will truncate auto_excerpt.lines rows in post head to replace excerpt.
+auto_excerpt:
+    enable: true
+    lines: 5
+
+# Search
+search:
+    insight: true # you need to install `hexo-generator-json-content` before using Insight Search
+# History version
+history_control: # make you wiki has history version control in page
+    enable: true
+    server_link: https://github.com # recommend use GitHub https://github.com
+    user: shiyis
+    repertory: Wiki-site
+    branch: writing
+
+# Comment
+comment:
+    disqus: # enter disqus shortname here
+    duoshuo: # enter duoshuo shortname here
+    youyan: # enter youyan uid here
+
+# Share
+share: default # options: jiathis, bdshare, addtoany, default
+
+# Plugins
+plugins:
+    lightgallery: true # options: true, false
+    justifiedgallery: true # options: true, false
+    mathjax: true # options: true, false - to enable use Mathjax in your article
+    google_analytics: # enter the tracking ID for your Google Analytics
+    google_site_verification: # enter Google site verification code
+    baidu_analytics: # enter Baidu Analytics hash key
+    busuanzi_count: false # options: true, false - to enable busuanzi site pv statistics
+
+
+math:
+  enable: true
+  per_page: false
+  engine: mathjax
+  mathjax:
+    version: 2.7.7
+    config: TeX-AMS_HTML
+    cdn: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js
+
+# Miscellaneous
+miscellaneous:
+    open_graph: # see http://ogp.me
+        fb_app_id:
+        fb_admins:
+        twitter_id:
+        google_plus:
+    links:

@@ -1,0 +1,54 @@
+<% if (site.posts.length) { %>
+    <div class="widget-wrap" id="archives">
+        <h3 class="widget-title"><span><%= __('widget.archives') %></span></h3>
+        <div class="widget">
+            <%- list_archives() %>
+        </div>
+
+
+        <script>
+          function toggleVisibility(elementId) {
+              var element = document.getElementById(elementId);
+              if (element.style.display === 'none' || element.style.display === '') {
+                  element.style.display = 'block';
+              } else {
+                  element.style.display = 'none';
+              }
+          }
+
+          document.addEventListener('DOMContentLoaded', function() {
+              var toggleButton = document.getElementById('archive-widget');
+              toggleButton.addEventListener('click', function() {
+                  toggleVisibility('archive-widget');
+              });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+          // Check if the .timeline-wrap class is present
+          if (document.querySelector('.timeline-wrap')) {
+              // If present, hide the #right-sidebar and show the #archives
+              var rightSidebar = document.getElementById('right-sidebar');
+              var archives = document.getElementById('archives');
+
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'none';
+              }
+              if (archives) {
+                  archives.style.display = 'block';
+              }
+          } else {
+              // If .timeline-wrap is not present, ensure the default visibility
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'block';
+              }
+              if (archives) {
+                  archives.style.display = 'none';
+              }
+          }
+      });
+
+
+    </script>
+
+    </div>
+<% } %>

@@ -1,0 +1,29 @@
+<div class="search">
+  <form>
+    <input type="search" id="search-input" placeholder="Search...">
+    <button type="submit">Search</button>
+  </form>
+  <ul id="search-results"></ul>
+</div>
+
+<script>
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+
+  searchInput.addEventListener('input', async () => {
+    const searchTerm = searchInput.value.trim();
+    const response = await fetch('/search.json');
+    const searchData = await response.json();
+    const results = searchData.filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    searchResults.innerHTML = '';
+    results.forEach(post => {
+      const resultHTML = `
+        <li>
+          <a href="${post.permalink}">${post.title}</a>
+        </li>
+      `;
+      searchResults.innerHTML += resultHTML;
+    });
+  });
+</script>

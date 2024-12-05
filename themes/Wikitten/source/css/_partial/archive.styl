@@ -1,0 +1,221 @@
+.archives
+    clearfix()
+    .article:first-child
+        margin: 20px 0
+
+.archive-year-wrap,
+.archive-category-wrap,
+.archive-tag-wrap,
+.layout-title
+    font-size: 1.4em
+    margin: block-margin 0 20px 0
+    @media mq-mini
+        padding: 0 15px
+        font-size: 1.2em
+    .fa
+        margin-right: 3px
+    .archive-year
+        color: color-default
+        &:hover
+            color: color-link
+.layout-wrap-inner
+    @media mq-mini
+        padding: 0 15px
+
+.archive-article
+    clearfix()
+    avoid-column-break()
+    @extend $block
+    padding: 0
+    margin-bottom: 15px
+    &.archive-type-summary
+        padding: 15px
+        .article-entry
+            padding: 0
+            p
+                margin: 12px 0
+    .archive-article-content,
+    .archive-article-thumbnail
+        display: table-cell
+        vertical-align: top
+        @media mq-mini
+            display: block
+    .archive-article-thumbnail
+        width: 160px
+        padding-right: 15px
+        @media mq-mini
+            width: 100%
+            padding-bottom: 15px
+        .thumbnail
+            height: 0
+            width: 100%
+            padding-bottom: 56.25%
+            display: block
+            position: relative
+            overflow: hidden
+            span
+                width: 100%
+                height: 100%
+                display: block
+            .thumbnail-image
+                position: absolute
+                background-size: cover
+                background-position: center
+            .thumbnail-none
+                background-image: url(thumbnail-default-small)
+
+.archive-year
+    @extend $block-caption
+
+.archive-article-header
+    a
+        @extend $link-dark
+
+.archive-article-title
+    display: block
+    font-size: 1.6em
+    line-height: 1.4em
+    margin-bottom: 12px
+    @media mq-mini
+        display: block
+        font-size: 1.3em
+
+.archive-article-date
+    display: block
+    margin-top: 8px
+
+.layout-wrap-inner
+    &.list-categories
+        .category-list .category-list-item .category-list-link
+            font-size: 1.2em
+        ul
+            margin-left: 15px
+            list-style: none
+            li,
+            .category-list-child
+                padding: 10px 0
+                font-size: font-size
+                border-bottom: 1px solid border-color
+                a
+                    color: color-sidebar-text
+            ul, ol
+                list-style: none
+                li
+                    border: none
+                    &:last-child
+                        padding-bottom: 0px
+        li
+            a
+                &:before
+                    color: #ccc
+                    content: "\f0da"
+                    font-size: 12px
+                    margin-right: 6px
+                    font-family: FontAwesome
+                    transition: 0.2s ease
+                &:hover:before
+                    color: color-sidebar-text-dark
+    &.tag-cloud
+        a
+            @extend $link-dark
+            display: inline-block
+            margin-right: 8px
+            &:before
+                content: '#'
+
+#page-nav
+    clearfix()
+    margin: block-margin auto
+    text-align: center
+    color: color-grey
+    overflow: hidden
+    a, span
+        height: 32px
+        padding: 0 10px
+        line-height: 32px
+        text-align: center
+        display: inline-block
+        border-radius: 2px
+    a
+        color: color-grey
+        text-decoration: none
+        &:hover
+            color: white
+            background: color-link
+    .page-number
+        display: inline-block
+        @media mq-mini
+            display: none
+    .current
+        color: color-default
+        font-weight: bold
+
+
+
+.timeline-container
+    max-width auto
+    padding 15px
+    justify: right
+    align-content baseline
+    .widget-wrap
+      margin: 40px 0;
+      background-color: #eff1f4;
+      border: 4px solid #c1cfdc;
+      border-radius: 4px;
+      padding: 20px;
+
+
+.timeline-row
+    display flex
+    align-items right
+    position relative
+    padding 10px 0
+
+.timeline-icon
+    margin-left: 30px
+    width 30px
+    height 30px
+    background-color #3498db
+    border-radius 50%
+    display flex
+    align-items center
+    justify-content center
+    color #fff
+    font-size 20px
+    position absolute
+    left -25px
+    top 10px
+
+.timeline-year .timeline-icon, .timeline-month .timeline-icon
+    background-color grey
+
+.timeline-title
+    font-size 1.5em
+    margin-left 50px
+
+.timeline-post-title
+    font-size 1.2em
+    margin-left 50px
+    margin-top: -5px
+    margin-bottom: 5px
+    font-weight bold
+
+.timeline-post-meta
+    font-size 0.9em
+    color #777
+    magin-top 10px
+    margin-left 50px
+
+.timeline-post-meta span
+    margin-right 15px
+
+.timeline-post
+    margin-bottom 15px
+    background-color #f8f8f8
+    padding 15px
+    border-radius 5px
+
+.timeline-post .timeline-icon
+    width 10px
+    height 10px
+    margin 7px 60px

@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>NLPWME Docs</title>
+    
+    
+        <meta name="keywords" content="NLPWME Docs" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta property="og:type" content="website">
+<meta property="og:title" content="NLPWME Docs">
+<meta property="og:url" content="https://shiyis.github.io/nlp-docs/index.html">
+<meta property="og:site_name" content="NLPWME Docs">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Shiyi S">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/nlp-docs/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/nlp-docs/css/style.css">
+
+    
+<script src="/nlp-docs/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/nlp-docs/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/nlp-docs/" id="logo">
+                
+                <span class="site-title">NLPWME Docs</span>
+            </a>
+            <nav id="main-nav">
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/nlp-docs/',
+        CONTENT_URL: '/nlp-docs/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/nlp-docs/js/insight.js"></script>
+
+
+</div>
+
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            <!-- Left Sidebar -->
+            
+                <aside id="sidebar-left">
+                    <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linguistics
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/13/philo-o-mind/">Philosophy of Mind</a></li>  <li class="file"><a href="/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></li>  <li class="file"><a href="/nlp-docs/2024/07/17/compositionality/">Compositionality</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Math
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/13/mutual-info/">Mutual Information</a></li>  <li class="file"><a href="/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></li>  <li class="file"><a href="/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></li>  <li class="file"><a href="/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></li>  <li class="file"><a href="/nlp-docs/2024/07/27/vae/">Variational Autoencoders</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            NLP Related
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/13/mdn-nlp/">Modern NLP</a></li>  <li class="file"><a href="/nlp-docs/2024/07/17/transformer/">The GPT Architecture</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            stochastic
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/09/02/determinism/">Determinism</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/nlp-docs/2024/07/11/place-holder/">Intro & Overview</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap" id="archives">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/09/">September 2024</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/07/">July 2024</a><span class="archive-list-count">11</span></li></ul>
+        </div>
+
+
+        <script>
+          function toggleVisibility(elementId) {
+              var element = document.getElementById(elementId);
+              if (element.style.display === 'none' || element.style.display === '') {
+                  element.style.display = 'block';
+              } else {
+                  element.style.display = 'none';
+              }
+          }
+
+          document.addEventListener('DOMContentLoaded', function() {
+              var toggleButton = document.getElementById('archive-widget');
+              toggleButton.addEventListener('click', function() {
+                  toggleVisibility('archive-widget');
+              });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+          // Check if the .timeline-wrap class is present
+          if (document.querySelector('.timeline-wrap')) {
+              // If present, hide the #right-sidebar and show the #archives
+              var rightSidebar = document.getElementById('right-sidebar');
+              var archives = document.getElementById('archives');
+
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'none';
+              }
+              if (archives) {
+                  archives.style.display = 'block';
+              }
+          } else {
+              // If .timeline-wrap is not present, ensure the default visibility
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'block';
+              }
+              if (archives) {
+                  archives.style.display = 'none';
+              }
+          }
+      });
+
+
+    </script>
+
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tags</span></h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/determinism/" rel="tag">determinism</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/intro/" rel="tag">intro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/math/" rel="tag">math</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/nlp-theories/" rel="tag">nlp-theories</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/semantics/" rel="tag">semantics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+                </aside>
+            
+
+            <!-- Main Content -->
+            <section id="main">
+                
+        <article id="post-mdn-nlp" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/NLP-Related/">NLP Related</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/nlp-theories/" rel="tag">nlp-theories</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/13/mdn-nlp/">
+            <time datetime="2024-07-13T22:27:14.000Z" itemprop="datePublished">2024-07-13</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/mdn-nlp.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/mdn-nlp.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/mdn-nlp.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/13/mdn-nlp/">Modern NLP</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="Introduction-to-Contemporary-NLP"><a href="#Introduction-to-Contemporary-NLP" class="headerlink" title="Introduction to Contemporary NLP"></a>Introduction to Contemporary NLP</h3><p><span class="label label-danger">Q</span> What is the importance of psychological concepts in NLP?</p>
+<p><span class="label label-success">A</span> To understand modern natural language processing (NLP), it’s essential to draw inferences from crucial psychological concepts like the <strong>Language of Thought Hypothesis</strong> and the <strong>Representational Theory of Mind</strong>. These concepts help explain how our brain processes and produces language and mental representations, which are foundational for NLP.</p>
+<h6 id="Language-of-Thought-Hypothesis-LOTH"><a href="#Language-of-Thought-Hypothesis-LOTH" class="headerlink" title="Language of Thought Hypothesis (LOTH)"></a>Language of Thought Hypothesis (<code>LOTH</code>)</h6><p><span class="label label-danger">Q</span> What does the Language of Thought Hypothesis (<code>LOTH</code>) propose?</p>
+<p><span class="label label-success">A</span> <code>LOTH</code> proposes that our brain has a schema for producing language of thought, known as <em>Mentalese</em>. It suggests that mental states and thoughts have a structured, language-like format, which facilitates reasoning, problem-solving, and decision-making.</p>
+<p><span class="label label-danger">Q</span> What are propositional attitudes in <code>LOTH</code>?</p>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/07/13/mdn-nlp/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-mutual-info" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Math/">Math</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/nlp-theories/" rel="tag">nlp-theories</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/13/mutual-info/">
+            <time datetime="2024-07-13T22:27:14.000Z" itemprop="datePublished">2024-07-13</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/mutual-info.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/mutual-info.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/mutual-info.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/13/mutual-info/">Mutual Information</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+            
+        
+        
+            
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-audo-diff" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Math/">Math</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/math/" rel="tag">math</a>, <a class="tag-link-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/14/audo-diff/">
+            <time datetime="2024-07-14T17:40:00.000Z" itemprop="datePublished">2024-07-14</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/audo-diff.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/audo-diff.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/audo-diff.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="Intro-to-Automatic-Differentiation"><a href="#Intro-to-Automatic-Differentiation" class="headerlink" title="Intro to Automatic Differentiation"></a>Intro to Automatic Differentiation</h3><p>In this blog, we will go through the foundations behind Automatic Differentiation.</p>
+<div style="margin-left:1px; margin-top: 30px">
+  <iframe id="iframe-yt-video" width="100%" height="520" src="https://www.youtube.com/embed/56WUlMEeAuA?enablejsapi=1&autoplay=1" frameborder="0"></iframe>
+</div>
+
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/07/14/audo-diff/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="search-markov-chains" class="article article-type-search" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Math/">Math</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/math/" rel="tag">math</a>, <a class="tag-link-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/16/markov-chains/">
+            <time datetime="2024-07-16T12:13:20.000Z" itemprop="datePublished">2024-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/markov-chains.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/markov-chains.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/markov-chains.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="Discussions-on-Markov-Processes-Contitnued"><a href="#Discussions-on-Markov-Processes-Contitnued" class="headerlink" title="Discussions on Markov Processes Contitnued"></a>Discussions on Markov Processes Contitnued</h3><p>In a different blog, I noted the use of a markov processes in the context of natural language processing. Now in this blog, we will be going through some important details with regard to the concept.</p>
+<p>We will go through some code in the subsequent paragraph with respect to how to simulate Markov Chain in coding.</p>
+<h4 id="Markov-Chain-Basics"><a href="#Markov-Chain-Basics" class="headerlink" title="Markov Chain Basics"></a>Markov Chain Basics</h4><p>A Markov chain is a mathematical system that undergoes transitions from one state to another within a finite or countable number of states. It is a stochastic process that satisfies the Markov property, which states that the future state depends only on the current state and not on the sequence of events that preceded it.</p>
+<h4 id="Components-of-a-Markov-Chain"><a href="#Components-of-a-Markov-Chain" class="headerlink" title="Components of a Markov Chain"></a>Components of a Markov Chain</h4><ol>
+<li><p><strong>States</strong>: The different possible conditions or configurations the system can be in.</p>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/07/16/markov-chains/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="search-transformer" class="article article-type-search" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/NLP-Related/">NLP Related</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/nlp-theories/" rel="tag">nlp-theories</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/17/transformer/">
+            <time datetime="2024-07-17T13:16:00.000Z" itemprop="datePublished">2024-07-17</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/transformer.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/transformer.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/transformer.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/17/transformer/">The GPT Architecture</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="Summary-and-breakdown-of-the-code-that-form-the-Generative-Pre-trained-Transformer-architecture-continued"><a href="#Summary-and-breakdown-of-the-code-that-form-the-Generative-Pre-trained-Transformer-architecture-continued" class="headerlink" title="Summary and breakdown of the code that form the Generative Pre-trained Transformer architecture continued"></a>Summary and breakdown of the code that form the Generative Pre-trained Transformer architecture continued</h3><p>Let’s break down the code snippet line by line to understand what each step does in the context of creating positional encodings for a Transformer model using PyTorch.</p>
+<h4 id="Code-Snippet"><a href="#Code-Snippet" class="headerlink" title="Code Snippet"></a>Code Snippet</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div_term = torch.exp(torch.arange(<span class="number">0</span>, d_model, <span class="number">2</span>).<span class="built_in">float</span>() *</span><br><span class="line">                                 (-math.log(<span class="number">10000.0</span>) / d_model))</span><br><span class="line">pe[:, <span class="number">0</span>::<span class="number">2</span>] = torch.sin(position * div_term)</span><br><span class="line">pe[:, <span class="number">1</span>::<span class="number">2</span>] = torch.cos(position * div_term)</span><br><span class="line">pe = pe.unsqueeze(<span class="number">0</span>).transpose(<span class="number">0</span>, <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h4><h6 id="1-div-term-torch-exp-torch-arange-0-d-model-2-float-math-log-10000-0-d-model"><a href="#1-div-term-torch-exp-torch-arange-0-d-model-2-float-math-log-10000-0-d-model" class="headerlink" title="1. div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))"></a>1. <code>div_term = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))</code></h6><ul>
+<li><p><strong>Purpose</strong>: Calculate the denominator for the sine and cosine functions in the positional encoding formula.</p>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/07/17/transformer/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="search-problem-solving" class="article article-type-search" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Linguistics/">Linguistics</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/semantics/" rel="tag">semantics</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/17/problem-solving/">
+            <time datetime="2024-07-17T13:27:00.000Z" itemprop="datePublished">2024-07-17</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/problem-solving.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/problem-solving.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/problem-solving.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="More-on-Logic-And-Problem-Solving"><a href="#More-on-Logic-And-Problem-Solving" class="headerlink" title="More on Logic And Problem Solving"></a>More on Logic And Problem Solving</h3><p>In a different <a href="https://shiyis.github.io/nlpwme/modules/1h-semantics/">blog</a>, I have briefly introduced some of the most important concepts of logic and problem solving, including but not limited to predicate calculus, propositional logic, and lambda calculus.</p>
+<p>In this blog, the notes will be more in detail and introduce relevant ideas.</p>
+<h4 id="Defining-Entailment-Implicatures-and-Presuppositions"><a href="#Defining-Entailment-Implicatures-and-Presuppositions" class="headerlink" title="Defining Entailment, Implicatures, and Presuppositions"></a>Defining Entailment, Implicatures, and Presuppositions</h4><p><strong>Implicatures</strong>: What’s suggested in an utterance, even though it is not explicitly stated or entailed by the utterance.</p>
+<p><strong>Entailment</strong>: Entailment is a relationship between statements where one statement necessarily follows from another. If statement A entails statement B, then if A is true, B must also be true.</p>
+<p><strong>Presuppositions</strong>: A presupposition is an assumption that as speaker makes about what the listener already knows or believes to be true. It’s information taken for granted in the utterance.</p>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/07/17/problem-solving/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="search-compositionality" class="article article-type-search" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Linguistics/">Linguistics</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/17/compositionality/">
+            <time datetime="2024-07-17T13:41:30.000Z" itemprop="datePublished">2024-07-17</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/compositionality.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/compositionality.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/compositionality.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/17/compositionality/">Compositionality</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="Dealing-with-Compositionality"><a href="#Dealing-with-Compositionality" class="headerlink" title="Dealing with Compositionality"></a>Dealing with Compositionality</h3><p>This blog will introduce the research done in syntax that addressed compositionality.</p>
+<h4 id="Non-Overlap-Constraint-Explained"><a href="#Non-Overlap-Constraint-Explained" class="headerlink" title="Non-Overlap Constraint Explained"></a>Non-Overlap Constraint Explained</h4><p>The non-overlap constraint is a rule in cognitive models or neural networks that prevents overlapping activations of units in a chain map. This ensures that no two units representing the same syntactic marker can be active simultaneously, which helps maintain clear and distinct representations.</p>
+<h4 id="Diagram-Breakdown"><a href="#Diagram-Breakdown" class="headerlink" title="Diagram Breakdown"></a>Diagram Breakdown</h4><h6 id="Components"><a href="#Components" class="headerlink" title="Components:"></a>Components:</h6><ol>
+<li><p><strong>Chain Map (Green Text):</strong></p>
+<ul>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/07/17/compositionality/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-jacobian-matrices" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Math/">Math</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/determinism/" rel="tag">determinism</a>, <a class="tag-link-link" href="/nlp-docs/tags/math/" rel="tag">math</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/17/jacobian-matrices/">
+            <time datetime="2024-07-17T17:47:00.000Z" itemprop="datePublished">2024-07-17</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/jacobian-matrices.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/jacobian-matrices.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/jacobian-matrices.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="Discussions-on-Jacobian-Matrices-Continued"><a href="#Discussions-on-Jacobian-Matrices-Continued" class="headerlink" title="Discussions on Jacobian Matrices Continued"></a>Discussions on Jacobian Matrices Continued</h3><p>This blog will break down and continue explaining Jacobian matrices and Taylor expansions in plain language and explore how they are connected.</p>
+<h4 id="Jacobian-Matrix"><a href="#Jacobian-Matrix" class="headerlink" title="Jacobian Matrix"></a>Jacobian Matrix</h4><p><strong>What it is:</strong></p>
+<ul>
+<li>Imagine you have a function that takes multiple inputs and gives multiple outputs. For example, you might have a function that takes two numbers (like coordinates $x$ and $y$) and gives back two other numbers.</li>
+<li>The Jacobian matrix is a way to capture how small changes in each input affect each output.</li>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/07/17/jacobian-matrices/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="post-vae" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Math/">Math</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/math/" rel="tag">math</a>, <a class="tag-link-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/27/vae/">
+            <time datetime="2024-07-27T13:16:00.000Z" itemprop="datePublished">2024-07-27</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/vae.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/vae.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/vae.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/07/27/vae/">Variational Autoencoders</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="Introducing-The-Gists-of-Variational-Autoencoders-VAEs"><a href="#Introducing-The-Gists-of-Variational-Autoencoders-VAEs" class="headerlink" title="Introducing The Gists of Variational Autoencoders (VAEs)"></a>Introducing The Gists of Variational Autoencoders (VAEs)</h3><h4 id="What-is-a-Variational-Autoencoder-VAE"><a href="#What-is-a-Variational-Autoencoder-VAE" class="headerlink" title="What is a Variational Autoencoder (VAE)?"></a>What is a Variational Autoencoder (VAE)?</h4><p>Imagine you have a magical machine that can take a picture of your favorite toy, turn it into a secret code, and then use that code to recreate the toy’s picture. This is kind of what a Variational Autoencoder (VAE) does, but instead of toys, it works with things like images, sounds, or even words.</p>
+<p>A VAE is a type of artificial brain (or neural network) that learns to compress data (like a picture) into a simpler form and then uses that simple form to recreate the original data. The “variational” part means that it doesn’t just learn one way to represent the data, but many possible ways, which helps it be more flexible and creative.</p>
+<h4 id="Math-Foundations-Breaking-it-Down"><a href="#Math-Foundations-Breaking-it-Down" class="headerlink" title="Math Foundations: Breaking it Down"></a>Math Foundations: Breaking it Down</h4><p>Let’s keep things simple. Imagine you have a bunch of colored balls, and you want to sort them by color. First, you need to pick a way to describe each color with a number. This number is like the “code” that the VAE creates. Then, once you have the code, you need to figure out how to recreate the exact color from the number.</p>
+<ol>
+<li><p><strong>Encoder</strong>: This part of the VAE is like a friend who looks at the color of the ball and writes down a secret code (a number) that represents that color.</p>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/07/27/vae/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <article id="search-determinism" class="article article-type-search" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/stochastic/">stochastic</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/09/02/determinism/">
+            <time datetime="2024-09-02T13:15:30.000Z" itemprop="datePublished">2024-09-02</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/determinism.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/determinism.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/determinism.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/nlp-docs/2024/09/02/determinism/">Determinism</a>
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                
+                    
+                    <p><h3 id="Probing-Both-The-Philosophical-and-Mathematical-Aspects-of-Determinism"><a href="#Probing-Both-The-Philosophical-and-Mathematical-Aspects-of-Determinism" class="headerlink" title="Probing Both The Philosophical and Mathematical Aspects of Determinism"></a>Probing Both The Philosophical and Mathematical Aspects of Determinism</h3><p>In information theory and computational linguistics, determinism can be discussed through concepts such as:</p>
+<ol>
+<li><p><strong>Entropy</strong>: In information theory, entropy measures the uncertainty or randomness in a system. A deterministic system would have low entropy, as its outcomes are predictable.</p>
+</li>
+<li><p><strong>Markov Chains</strong>: In computational linguistics, Markov chains are used to model sequences where the future state depends only on the current state (deterministic in nature). However, these models also account for probabilistic transitions, introducing a mix of determinism and randomness.</p>
+<p>
+                
+            
+        
+        
+            </div>   
+            <div class="article-more-link">
+                <a href="/nlp-docs/2024/09/02/determinism/#more">Read More</a>
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+
+
+
+
+    
+        <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/nlp-docs/page/2/">2</a><a class="extend next" rel="next" href="/nlp-docs/page/2/">Next &raquo;</a>
+        </nav>
+    
+
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside id="sidebar-right">
+                <aside id="right-sidebar">
+    <div class="timeline-container">
+        
+                <!-- Year Marker -->
+                <div class="timeline-row timeline-year">
+                    <span class="timeline-icon"><i class="fa fa-calendar-o"></i></span>
+                    <h2 class="timeline-title">2024</h2>
+                </div>
+        
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-09 (1)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/09/02/determinism/">Determinism</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> stochastic</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-07 (11)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/27/vae/">Variational Autoencoders</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-27</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/17/compositionality/">Compositionality</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/17/transformer/">The GPT Architecture</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-16</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-14</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/13/mdn-nlp/">Modern NLP</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-13</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/13/mutual-info/">Mutual Information</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-13</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/13/philo-o-mind/">Philosophy of Mind</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-13</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyis.github.io/nlp-docs/2024/07/11/place-holder/">Intro &amp; Overview</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-11</span>
+                        <span><i class="fa fa-folder-open"></i> </span>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div> <!-- Close the last month's timeline-posts -->
+    </div>
+</aside>
+
+            </aside>
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Shiyi S &copy; 2024 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+    
+        
+<script src="/nlp-docs/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/nlp-docs/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="/nlp-docs/js/main.js"></script>
+    <script src="/nlp-docs/js/dots.js"></script>
+    <script src="/nlp-docs/js/yt-bars.js"></script>
+
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/nlp-docs/js/main.js"></script>
+
+
+    </div>
+</html>

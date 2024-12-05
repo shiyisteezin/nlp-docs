@@ -1,0 +1,23 @@
+<%
+var indexArticle;
+var index_file = theme.customize.default_index_file;
+if(index_file) {
+    var query = {"source": `_posts/${index_file}`};
+    indexArticle = site.posts.find(query).first();
+}
+if(indexArticle) { %>
+    <%- partial('common/article', { post: indexArticle, index: false }) %>
+<% } else {
+    // Sort posts by date in ascending order before displaying them
+    page.posts.sort('date', 1).each(function(post) { %>
+        <%- partial('common/article', { post: post, index: true }) %>
+    <% });
+    if (page.total > 1) { %>
+        <nav id="page-nav">
+        <%- paginator({
+            prev_text: '&laquo; ' + __('nav.prev'),
+            next_text: __('nav.next') + ' &raquo;'
+        }) %>
+        </nav>
+    <% }
+} %>
