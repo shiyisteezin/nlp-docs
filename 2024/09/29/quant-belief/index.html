@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Quantifying Beliefs | NLPwShiyi Docs</title>
+    
+    
+        <meta name="keywords" content="math,determinism" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="This Blog Will Go Through Some Fun Things About Modeling Beliefs with Bayesian MethodsThe relationship between Bayesian conditional probability and theological discussions, particularly the existence">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Quantifying Beliefs">
+<meta property="og:url" content="https://shiyisteezin.github.io/nlp-docs/2024/09/29/quant-belief/index.html">
+<meta property="og:site_name" content="NLPwShiyi Docs">
+<meta property="og:description" content="This Blog Will Go Through Some Fun Things About Modeling Beliefs with Bayesian MethodsThe relationship between Bayesian conditional probability and theological discussions, particularly the existence">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-09-29T13:47:00.000Z">
+<meta property="article:modified_time" content="2024-12-05T18:39:15.378Z">
+<meta property="article:author" content="Shiyi S">
+<meta property="article:tag" content="math">
+<meta property="article:tag" content="determinism">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/nlp-docs/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/nlp-docs/css/style.css">
+
+    
+<script src="/nlp-docs/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/nlp-docs/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/nlp-docs/" id="logo">
+                
+                <span class="site-title">NLPwShiyi Docs</span>
+            </a>
+            <nav id="main-nav">
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/nlp-docs/',
+        CONTENT_URL: '/nlp-docs/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/nlp-docs/js/insight.js"></script>
+
+
+</div>
+
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            <!-- Left Sidebar -->
+            
+                <aside id="sidebar-left">
+                    <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linguistics
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></li>  <li class="file"><a href="/nlp-docs/2024/08/13/philo-o-mind/">Philosophy of Mind</a></li>  <li class="file"><a href="/nlp-docs/2024/09/17/compositionality/">Compositionality</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Math
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></li>  <li class="file"><a href="/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></li>  <li class="file"><a href="/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></li>  <li class="file"><a href="/nlp-docs/2024/07/23/viterbi/">Viterbi Algorithm</a></li>  <li class="file"><a href="/nlp-docs/2024/07/27/vae/">Variational Families</a></li>  <li class="file"><a href="/nlp-docs/2024/08/03/mutual-info/">Mutual Information</a></li>  <li class="file"><a href="/nlp-docs/2024/09/02/determinism/">Intro to Determinism</a></li>  <li class="file"><a href="/nlp-docs/2024/11/18/sgd/">Understanding SGD</a></li>  <li class="file"><a href="/nlp-docs/2024/11/23/measuring-subjectivity/">Measuring Subjectivity</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            NLP Related
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/08/13/mdn-nlp/">Contemporary NLP</a></li>  <li class="file"><a href="/nlp-docs/2024/08/17/transformer/">The GPT Architecture</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Other
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/09/02/intentionality/">Naturalizing Intentions</a></li>  <li class="file"><a href="/nlp-docs/2024/09/02/qulia/">Understanding Qualia</a></li>  <li class="file active"><a href="/nlp-docs/2024/09/29/quant-belief/">Quantifying Beliefs</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/nlp-docs/2024/07/11/place-holder/">Intro & Overview</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap" id="archives">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/11/">November 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/09/">September 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/07/">July 2024</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+
+
+        <script>
+          function toggleVisibility(elementId) {
+              var element = document.getElementById(elementId);
+              if (element.style.display === 'none' || element.style.display === '') {
+                  element.style.display = 'block';
+              } else {
+                  element.style.display = 'none';
+              }
+          }
+
+          document.addEventListener('DOMContentLoaded', function() {
+              var toggleButton = document.getElementById('archive-widget');
+              toggleButton.addEventListener('click', function() {
+                  toggleVisibility('archive-widget');
+              });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+          // Check if the .timeline-wrap class is present
+          if (document.querySelector('.timeline-wrap')) {
+              // If present, hide the #right-sidebar and show the #archives
+              var rightSidebar = document.getElementById('right-sidebar');
+              var archives = document.getElementById('archives');
+
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'none';
+              }
+              if (archives) {
+                  archives.style.display = 'block';
+              }
+          } else {
+              // If .timeline-wrap is not present, ensure the default visibility
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'block';
+              }
+              if (archives) {
+                  archives.style.display = 'none';
+              }
+          }
+      });
+
+
+    </script>
+
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tags</span></h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/determinism/" rel="tag">determinism</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/intro/" rel="tag">intro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/math/" rel="tag">math</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/nlp-theories/" rel="tag">nlp-theories</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/semantics/" rel="tag">semantics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+                </aside>
+            
+
+            <!-- Main Content -->
+            <section id="main">
+                <article id="post-quant-belief" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Other/">Other</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/determinism/" rel="tag">determinism</a>, <a class="tag-link-link" href="/nlp-docs/tags/math/" rel="tag">math</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/09/29/quant-belief/">
+            <time datetime="2024-09-29T13:47:00.000Z" itemprop="datePublished">2024-09-29</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/quant-belief.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/quant-belief.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/quant-belief.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Quantifying Beliefs
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h3 id="This-Blog-Will-Go-Through-Some-Fun-Things-About-Modeling-Beliefs-with-Bayesian-Methods"><a href="#This-Blog-Will-Go-Through-Some-Fun-Things-About-Modeling-Beliefs-with-Bayesian-Methods" class="headerlink" title="This Blog Will Go Through Some Fun Things About Modeling Beliefs with Bayesian Methods"></a>This Blog Will Go Through Some Fun Things About Modeling Beliefs with Bayesian Methods</h3><p>The relationship between <strong>Bayesian conditional probability</strong> and theological discussions, particularly the existence or understanding of God, has been a subject of philosophical and theological debate for centuries. I will first explain the <strong>Bayesian conditional probability equation</strong> in a simple way and then explore how it might relate to theological concepts like belief in God.</p>
+<h3 id="Bayesian-Conditional-Probability"><a href="#Bayesian-Conditional-Probability" class="headerlink" title="Bayesian Conditional Probability"></a><strong>Bayesian Conditional Probability</strong></h3><p>At its core, <strong>Bayes’ Theorem</strong> helps us <strong>update our beliefs</strong> when we receive new evidence. It tells us how likely something is to be true (the <strong>posterior probability</strong>) given what we already believe (the <strong>prior probability</strong>) and the new evidence we observe.</p>
+<p>Bayes’ Theorem is expressed as:</p>
+<p>$$<br>P(A | B) &#x3D; \frac{P(B | A) \cdot P(A)}{P(B)}<br>$$</p>
+<p>Where:</p>
+<ul>
+<li>$ P(A | B) $ is the <strong>posterior probability</strong>: the probability of $ A $ being true given that we observe $ B $.</li>
+<li>$ P(B | A) $ is the <strong>likelihood</strong>: how likely we would be to observe $ B $ if $ A $ is true.</li>
+<li>$ P(A) $ is the <strong>prior probability</strong>: our initial belief about $ A $ before seeing any evidence.</li>
+<li>$ P(B) $ is the <strong>marginal probability</strong>: the total probability of observing $ B $, regardless of whether $ A $ is true or not.</li>
+</ul>
+<p>In essence, <strong>Bayes’ Theorem</strong> helps us <strong>update our beliefs</strong> in the light of new evidence. For example, it is often used in medical diagnostics, where we update the likelihood of a patient having a disease based on new test results.</p>
+<h3 id="Bayesian-Reasoning-and-God"><a href="#Bayesian-Reasoning-and-God" class="headerlink" title="Bayesian Reasoning and God"></a><strong>Bayesian Reasoning and God</strong></h3><p>Now, how does this relate to God or theology?</p>
+<ol>
+<li><strong>Belief in God as a Hypothesis</strong>:</li>
+</ol>
+<ul>
+<li>You can think of <strong>belief in God</strong> as the hypothesis $ A $, and some kind of <strong>evidence</strong> as $ B $. This evidence could be anything that people consider relevant, such as personal experiences, miracles, the existence of the universe, or moral values.</li>
+</ul>
+<ol start="2">
+<li><strong>Prior Probability</strong> $ P(A) $:</li>
+</ol>
+<ul>
+<li>This represents a person’s initial belief about whether God exists before considering the evidence. Different people have different prior probabilities depending on their background, education, culture, and other factors. Some people may have a strong belief in God’s existence (high prior), while others may be more skeptical (low prior).</li>
+</ul>
+<ol start="3">
+<li><strong>Likelihood</strong> $ P(B | A) $:</li>
+</ol>
+<ul>
+<li>This is the probability of observing the evidence $ B $ if God exists. For example, if the hypothesis is that God exists and the evidence is the fine-tuning of the universe, you would ask: how likely is it that this fine-tuning would exist if God exists?</li>
+</ul>
+<ol start="4">
+<li><strong>Posterior Probability</strong> $ P(A | B) $:</li>
+</ol>
+<ul>
+<li>After considering the evidence (e.g., personal experiences, philosophical arguments, scientific observations), Bayes’ Theorem helps us calculate the updated probability (posterior) of the hypothesis (i.e., belief in God). This represents how our belief in the existence of God changes after taking the new evidence into account.</li>
+</ul>
+<h3 id="Using-Bayes’-Theorem-to-Argue-for-or-Against-God’s-Existence"><a href="#Using-Bayes’-Theorem-to-Argue-for-or-Against-God’s-Existence" class="headerlink" title="Using Bayes’ Theorem to Argue for or Against God’s Existence:"></a><strong>Using Bayes’ Theorem to Argue for or Against God’s Existence</strong>:</h3><p>Bayes’ Theorem has been used in debates both <strong>for</strong> and <strong>against</strong> the existence of God. Here’s how different arguments might be framed using Bayesian reasoning:</p>
+<ol>
+<li><strong>Theistic Argument (Evidence Supporting God)</strong>:</li>
+</ol>
+<ul>
+<li>A common theistic argument might use the <strong>fine-tuning</strong> of the universe as the evidence $ B $. Proponents argue that the existence of such precise conditions for life is much more likely if God exists (high $ P(B | A) $) than if God does not exist (low $ P(B) $).</li>
+<li>If we assign a reasonable prior probability $ P(A) $ to God’s existence, then the posterior probability $ P(A | B) $ might be higher after considering the evidence.</li>
+</ul>
+<ol start="2">
+<li><strong>Atheistic Argument (Evidence Against God)</strong>:</li>
+</ol>
+<ul>
+<li>On the other hand, someone skeptical of the existence of God might point to the <strong>problem of evil</strong> as evidence $ B $. They could argue that the existence of so much suffering and evil in the world is more likely if God does not exist than if He does (i.e., $ P(B | A) $ is low if God exists).</li>
+<li>This would reduce the posterior probability $ P(A | B) $, leading to a lower belief in God’s existence after considering the evidence of evil.</li>
+</ul>
+<h3 id="Bayesian-Belief-and-Faith"><a href="#Bayesian-Belief-and-Faith" class="headerlink" title="Bayesian Belief and Faith:"></a><strong>Bayesian Belief and Faith</strong>:</h3><p>It’s important to note that while <strong>Bayesian reasoning</strong> is a powerful tool for updating beliefs in light of evidence, religious belief often involves elements of <strong>faith</strong> that may not be easily reducible to probabilistic reasoning. Faith can involve trust, personal experiences, and relationships that go beyond mere empirical evidence.</p>
+<ul>
+<li><strong>Faith</strong> might be seen as an area where prior beliefs are so strong that evidence $ B $ doesn’t significantly shift the posterior probability. For example, for a devout person, negative evidence might have little effect on belief in God because their prior probability $ P(A) $ is so high.</li>
+</ul>
+<h3 id="Limitations-of-Bayesian-Reasoning-in-Theological-Contexts"><a href="#Limitations-of-Bayesian-Reasoning-in-Theological-Contexts" class="headerlink" title="Limitations of Bayesian Reasoning in Theological Contexts:"></a><strong>Limitations of Bayesian Reasoning in Theological Contexts</strong>:</h3><ol>
+<li><strong>Subjectivity of Priors</strong>:</li>
+</ol>
+<ul>
+<li>The choice of the <strong>prior probability</strong> $ P(A) $ (belief in God before evidence) is subjective and varies significantly between individuals. What one person considers a strong prior (e.g., due to cultural or personal reasons) might be weak for another.</li>
+</ul>
+<ol start="2">
+<li><strong>Interpretation of Evidence</strong>:</li>
+</ol>
+<ul>
+<li>Evidence $ B $ can also be interpreted differently. For example, a natural disaster might be seen by some as evidence against God (because of suffering), while others might interpret it as a test of faith or part of a divine plan.</li>
+</ul>
+<ol start="3">
+<li><strong>Non-empirical Nature of Religious Experience</strong>:</li>
+</ol>
+<ul>
+<li>Many aspects of religious belief, such as spiritual experiences or faith in sacred texts, may not be directly quantifiable in the same way that physical or scientific evidence is.</li>
+</ul>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion:"></a>Conclusion:</h3><p>Bayesian conditional probability provides a <strong>formal way to update beliefs</strong> based on new evidence, and it can certainly be applied to discussions about the existence of God. However, the Bayesian framework relies heavily on <strong>subjective priors</strong> and how evidence is interpreted, which can vary greatly among individuals. While it can be a useful tool in philosophical debates about God’s existence, belief in God often transcends empirical evidence and enters the realm of <strong>faith</strong>, which might not fit neatly into a probabilistic model.</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/nlp-docs/2024/11/18/sgd/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Understanding SGD
+                
+            </div>
+        </a>
+    
+    
+        <a href="/nlp-docs/2024/09/17/compositionality/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Compositionality</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside id="sidebar-right">
+                <aside id="right-sidebar">
+    <div class="timeline-container">
+        
+                <!-- Year Marker -->
+                <div class="timeline-row timeline-year">
+                    <span class="timeline-icon"><i class="fa fa-calendar-o"></i></span>
+                    <h2 class="timeline-title">2024</h2>
+                </div>
+        
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-11 (2)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/11/23/measuring-subjectivity/">Measuring Subjectivity</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-11-23</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/11/18/sgd/">Understanding SGD</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-11-18</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-09 (5)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/29/quant-belief/">Quantifying Beliefs</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-29</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/17/compositionality/">Compositionality</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/determinism/">Intro to Determinism</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/intentionality/">Naturalizing Intentions</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/qulia/">Understanding Qualia</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-08 (4)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/17/transformer/">The GPT Architecture</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-17</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/13/mdn-nlp/">Contemporary NLP</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-13</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/13/philo-o-mind/">Philosophy of Mind</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-13</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/03/mutual-info/">Mutual Information</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-03</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-07 (7)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/27/vae/">Variational Families</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-27</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/23/viterbi/">Viterbi Algorithm</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-23</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-16</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-14</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/11/place-holder/">Intro &amp; Overview</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-11</span>
+                        <span><i class="fa fa-folder-open"></i> </span>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div> <!-- Close the last month's timeline-posts -->
+    </div>
+</aside>
+
+            </aside>
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Shiyi S &copy; 2024 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+        </div>
+    </div>
+</footer>
+
+        
+    
+        
+<script src="/nlp-docs/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/nlp-docs/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="/nlp-docs/js/main.js"></script>
+    <script src="/nlp-docs/js/dots.js"></script>
+    <script src="/nlp-docs/js/yt-bars.js"></script>
+
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/nlp-docs/js/main.js"></script>
+
+
+    </div>
+</html>

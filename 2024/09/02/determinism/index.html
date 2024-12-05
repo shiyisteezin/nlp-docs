@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Intro to Determinism | NLPwShiyi Docs</title>
+    
+    
+        <meta name="keywords" content="Intro to Determinism" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Introduction to Determinism in Philosophy and MathematicsDeterminism is the philosophical idea that every event or state of affairs, including human decisions, is the consequence of preceding events a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Intro to Determinism">
+<meta property="og:url" content="https://shiyisteezin.github.io/nlp-docs/2024/09/02/determinism/index.html">
+<meta property="og:site_name" content="NLPwShiyi Docs">
+<meta property="og:description" content="Introduction to Determinism in Philosophy and MathematicsDeterminism is the philosophical idea that every event or state of affairs, including human decisions, is the consequence of preceding events a">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-09-02T13:15:30.000Z">
+<meta property="article:modified_time" content="2024-12-05T18:39:15.372Z">
+<meta property="article:author" content="Shiyi S">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/nlp-docs/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/nlp-docs/css/style.css">
+
+    
+<script src="/nlp-docs/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/nlp-docs/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/nlp-docs/" id="logo">
+                
+                <span class="site-title">NLPwShiyi Docs</span>
+            </a>
+            <nav id="main-nav">
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/nlp-docs/',
+        CONTENT_URL: '/nlp-docs/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/nlp-docs/js/insight.js"></script>
+
+
+</div>
+
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            <!-- Left Sidebar -->
+            
+                <aside id="sidebar-left">
+                    <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linguistics
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></li>  <li class="file"><a href="/nlp-docs/2024/08/13/philo-o-mind/">Philosophy of Mind</a></li>  <li class="file"><a href="/nlp-docs/2024/09/17/compositionality/">Compositionality</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Math
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></li>  <li class="file"><a href="/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></li>  <li class="file"><a href="/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></li>  <li class="file"><a href="/nlp-docs/2024/07/23/viterbi/">Viterbi Algorithm</a></li>  <li class="file"><a href="/nlp-docs/2024/07/27/vae/">Variational Families</a></li>  <li class="file"><a href="/nlp-docs/2024/08/03/mutual-info/">Mutual Information</a></li>  <li class="file active"><a href="/nlp-docs/2024/09/02/determinism/">Intro to Determinism</a></li>  <li class="file"><a href="/nlp-docs/2024/11/18/sgd/">Understanding SGD</a></li>  <li class="file"><a href="/nlp-docs/2024/11/23/measuring-subjectivity/">Measuring Subjectivity</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            NLP Related
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/08/13/mdn-nlp/">Contemporary NLP</a></li>  <li class="file"><a href="/nlp-docs/2024/08/17/transformer/">The GPT Architecture</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Other
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/09/02/intentionality/">Naturalizing Intentions</a></li>  <li class="file"><a href="/nlp-docs/2024/09/02/qulia/">Understanding Qualia</a></li>  <li class="file"><a href="/nlp-docs/2024/09/29/quant-belief/">Quantifying Beliefs</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/nlp-docs/2024/07/11/place-holder/">Intro & Overview</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap" id="archives">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/11/">November 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/09/">September 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/07/">July 2024</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+
+
+        <script>
+          function toggleVisibility(elementId) {
+              var element = document.getElementById(elementId);
+              if (element.style.display === 'none' || element.style.display === '') {
+                  element.style.display = 'block';
+              } else {
+                  element.style.display = 'none';
+              }
+          }
+
+          document.addEventListener('DOMContentLoaded', function() {
+              var toggleButton = document.getElementById('archive-widget');
+              toggleButton.addEventListener('click', function() {
+                  toggleVisibility('archive-widget');
+              });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+          // Check if the .timeline-wrap class is present
+          if (document.querySelector('.timeline-wrap')) {
+              // If present, hide the #right-sidebar and show the #archives
+              var rightSidebar = document.getElementById('right-sidebar');
+              var archives = document.getElementById('archives');
+
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'none';
+              }
+              if (archives) {
+                  archives.style.display = 'block';
+              }
+          } else {
+              // If .timeline-wrap is not present, ensure the default visibility
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'block';
+              }
+              if (archives) {
+                  archives.style.display = 'none';
+              }
+          }
+      });
+
+
+    </script>
+
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tags</span></h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/determinism/" rel="tag">determinism</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/intro/" rel="tag">intro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/math/" rel="tag">math</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/nlp-theories/" rel="tag">nlp-theories</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/semantics/" rel="tag">semantics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+                </aside>
+            
+
+            <!-- Main Content -->
+            <section id="main">
+                <article id="search-determinism" class="article article-type-search" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Math/">Math</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/09/02/determinism/">
+            <time datetime="2024-09-02T13:15:30.000Z" itemprop="datePublished">2024-09-02</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/determinism.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/determinism.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/determinism.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Intro to Determinism
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h3 id="Introduction-to-Determinism-in-Philosophy-and-Mathematics"><a href="#Introduction-to-Determinism-in-Philosophy-and-Mathematics" class="headerlink" title="Introduction to Determinism in Philosophy and Mathematics"></a><strong>Introduction to Determinism in Philosophy and Mathematics</strong></h3><p><strong>Determinism</strong> is the philosophical idea that every event or state of affairs, including human decisions, is the consequence of preceding events according to fixed laws of nature. In its purest form, determinism implies that if we had perfect knowledge of the current state of the universe, we could predict all future events with certainty.</p>
+<p>In contrast, <strong>non-determinism</strong> implies the possibility of multiple potential outcomes for any given situation, introducing elements of uncertainty, chance, or randomness.</p>
+<p>In <strong>mathematics</strong> and <strong>computer science</strong>, determinism refers to systems or processes where outcomes are strictly determined by initial states and inputs, leading to predictable results. Non-determinism, on the other hand, allows for multiple potential outcomes given the same initial state and inputs, introducing randomness or unpredictability.</p>
+<hr>
+<h3 id="Philosophical-Aspects-of-Determinism"><a href="#Philosophical-Aspects-of-Determinism" class="headerlink" title="Philosophical Aspects of Determinism"></a><strong>Philosophical Aspects of Determinism</strong></h3><p>From a <strong>philosophical</strong> perspective, determinism is often discussed in relation to:</p>
+<ol>
+<li><p><strong>Causality</strong>: Every effect has a specific cause, and the future is just a sequence of causes and effects that can be predicted.</p>
+</li>
+<li><p><strong>Free Will</strong>: One of the central debates is whether free will can exist in a deterministic universe. If everything is predetermined by prior states and natural laws, how do individuals exercise free choice?</p>
+</li>
+<li><p><strong>Compatibilism vs. Incompatibilism</strong>:</p>
+<ul>
+<li><strong>Compatibilists</strong> argue that free will and determinism are not mutually exclusive. People can still be held accountable for their actions even if those actions are predetermined by prior causes.</li>
+<li><strong>Incompatibilists</strong> argue that true free will cannot exist in a deterministic framework.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="Mathematical-Aspects-of-Determinism"><a href="#Mathematical-Aspects-of-Determinism" class="headerlink" title="Mathematical Aspects of Determinism"></a><strong>Mathematical Aspects of Determinism</strong></h3><p>In <strong>mathematics</strong>, determinism is often studied through computational models and probabilistic systems that describe how inputs relate to outputs in predictable or unpredictable ways.</p>
+<h4 id="1-Information-Theory-Entropy"><a href="#1-Information-Theory-Entropy" class="headerlink" title="1. Information Theory: Entropy"></a><strong>1. Information Theory: Entropy</strong></h4><ul>
+<li><strong>Entropy</strong> is a measure of uncertainty or unpredictability in a system. In a <strong>deterministic</strong> system, there is little or no entropy because the outcome is always predictable.<ul>
+<li><strong>Example</strong>: If you flip a coin that always lands on heads, the entropy is zero because there’s no randomness.</li>
+<li><strong>Code Example (Python)</strong>:</li>
+</ul>
+</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">entropy</span>(<span class="params">probabilities</span>):</span><br><span class="line">    <span class="keyword">return</span> -<span class="built_in">sum</span>(p * math.log2(p) <span class="keyword">for</span> p <span class="keyword">in</span> probabilities <span class="keyword">if</span> p &gt; <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Example with a biased coin (always heads)</span></span><br><span class="line">probabilities = [<span class="number">1.0</span>]  <span class="comment"># deterministic, no uncertainty</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;Entropy: <span class="subst">&#123;entropy(probabilities)&#125;</span>&#x27;</span>)  <span class="comment"># Output: 0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-Markov-Chains"><a href="#2-Markov-Chains" class="headerlink" title="2. Markov Chains"></a><strong>2. Markov Chains</strong></h4><ul>
+<li><strong>Markov Chains</strong> are used to model systems where the future state depends only on the current state. A Markov process can be deterministic (if there is always one future state) or stochastic (if there are multiple possible future states with different probabilities).<ul>
+<li><strong>Example</strong>: A Markov chain can represent a simplified weather model where the weather today (sunny or rainy) depends only on the weather yesterday.</li>
+<li><strong>Code Example (Python)</strong>:</li>
+</ul>
+</li>
+</ul>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">markov_chain</span>(<span class="params">current_state, transitions</span>):</span><br><span class="line">    <span class="keyword">return</span> random.choices(<span class="built_in">list</span>(transitions[current_state].keys()), <span class="built_in">list</span>(transitions[current_state].values()))[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">transitions = &#123;</span><br><span class="line">    <span class="string">&#x27;sunny&#x27;</span>: &#123;<span class="string">&#x27;sunny&#x27;</span>: <span class="number">0.8</span>, <span class="string">&#x27;rainy&#x27;</span>: <span class="number">0.2</span>&#125;,</span><br><span class="line">    <span class="string">&#x27;rainy&#x27;</span>: &#123;<span class="string">&#x27;sunny&#x27;</span>: <span class="number">0.3</span>, <span class="string">&#x27;rainy&#x27;</span>: <span class="number">0.7</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Starting from &#x27;sunny&#x27;</span></span><br><span class="line">current_state = <span class="string">&#x27;sunny&#x27;</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    current_state = markov_chain(current_state, transitions)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;Next state: <span class="subst">&#123;current_state&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>This example shows a <strong>stochastic</strong> process. The current state affects future states, but it’s non-deterministic due to the probabilistic transitions.</li>
+</ul>
+<h4 id="3-Finite-State-Machines-FSMs"><a href="#3-Finite-State-Machines-FSMs" class="headerlink" title="3. Finite State Machines (FSMs)"></a><strong>3. Finite State Machines (FSMs)</strong></h4><ul>
+<li><strong>Finite State Machines</strong> are mathematical models of computation. In linguistics, they are used to model grammar and syntax.<ul>
+<li><strong>Deterministic Finite Automata (DFA)</strong>: A DFA is a machine where for each state and input, there is a unique next state. It processes strings in a predictable manner.</li>
+<li><strong>Non-Deterministic Finite Automata (NFA)</strong>: An NFA allows multiple possible states for a given input, introducing elements of non-determinism.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Deterministic-Finite-Automata-DFA-Example"><a href="#Deterministic-Finite-Automata-DFA-Example" class="headerlink" title="Deterministic Finite Automata (DFA) Example"></a><strong>Deterministic Finite Automata (DFA) Example</strong></h4><p>A DFA processes input strings deterministically, meaning each state has exactly one possible transition for a given input.</p>
+<ul>
+<li><strong>Example</strong>: Recognizing binary strings that end in “01”.</li>
+<li><strong>Code Example (Python)</strong>:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DFA</span>:</span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, transition_table, start_state, accept_states</span>):</span><br><span class="line">       <span class="variable language_">self</span>.transition_table = transition_table</span><br><span class="line">       <span class="variable language_">self</span>.state = start_state</span><br><span class="line">       <span class="variable language_">self</span>.accept_states = accept_states</span><br><span class="line"></span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">process</span>(<span class="params">self, input_string</span>):</span><br><span class="line">       <span class="keyword">for</span> symbol <span class="keyword">in</span> input_string:</span><br><span class="line">           <span class="variable language_">self</span>.state = <span class="variable language_">self</span>.transition_table[<span class="variable language_">self</span>.state][symbol]</span><br><span class="line">       <span class="keyword">return</span> <span class="variable language_">self</span>.state <span class="keyword">in</span> <span class="variable language_">self</span>.accept_states</span><br><span class="line"></span><br><span class="line"><span class="comment"># DFA that recognizes strings ending in &#x27;01&#x27;</span></span><br><span class="line">transition_table = &#123;</span><br><span class="line">   <span class="number">0</span>: &#123;<span class="string">&#x27;0&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;1&#x27;</span>: <span class="number">0</span>&#125;,</span><br><span class="line">   <span class="number">1</span>: &#123;<span class="string">&#x27;0&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;1&#x27;</span>: <span class="number">2</span>&#125;,</span><br><span class="line">   <span class="number">2</span>: &#123;<span class="string">&#x27;0&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;1&#x27;</span>: <span class="number">0</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line">dfa = DFA(transition_table, <span class="number">0</span>, &#123;<span class="number">2</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(dfa.process(<span class="string">&#x27;10101&#x27;</span>))  <span class="comment"># True, as it ends in &#x27;01&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(dfa.process(<span class="string">&#x27;1001&#x27;</span>))   <span class="comment"># False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Non-Deterministic-Finite-Automata-NFA-Example"><a href="#Non-Deterministic-Finite-Automata-NFA-Example" class="headerlink" title="Non-Deterministic Finite Automata (NFA) Example"></a><strong>Non-Deterministic Finite Automata (NFA) Example</strong></h4><p>In an NFA, a machine can move to multiple states simultaneously, and if any state reaches an accepting state, the input is accepted.</p>
+<ul>
+<li><strong>Example</strong>: Recognizing binary strings that contain “01” as a substring.</li>
+<li><strong>Code Example (Python)</strong>:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NFA</span>:</span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, transition_table, start_states, accept_states</span>):</span><br><span class="line">       <span class="variable language_">self</span>.transition_table = transition_table</span><br><span class="line">       <span class="variable language_">self</span>.start_states = start_states</span><br><span class="line">       <span class="variable language_">self</span>.accept_states = accept_states</span><br><span class="line"></span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">process</span>(<span class="params">self, input_string</span>):</span><br><span class="line">       current_states = <span class="variable language_">self</span>.start_states</span><br><span class="line">       <span class="keyword">for</span> symbol <span class="keyword">in</span> input_string:</span><br><span class="line">           next_states = <span class="built_in">set</span>()</span><br><span class="line">           <span class="keyword">for</span> state <span class="keyword">in</span> current_states:</span><br><span class="line">               <span class="keyword">if</span> symbol <span class="keyword">in</span> <span class="variable language_">self</span>.transition_table[state]:</span><br><span class="line">                   next_states.update(<span class="variable language_">self</span>.transition_table[state][symbol])</span><br><span class="line">           current_states = next_states</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">bool</span>(current_states &amp; <span class="variable language_">self</span>.accept_states)</span><br><span class="line"></span><br><span class="line"><span class="comment"># NFA recognizing strings containing &#x27;01&#x27;</span></span><br><span class="line">transition_table = &#123;</span><br><span class="line">   <span class="number">0</span>: &#123;<span class="string">&#x27;0&#x27;</span>: &#123;<span class="number">0</span>, <span class="number">1</span>&#125;, <span class="string">&#x27;1&#x27;</span>: &#123;<span class="number">0</span>&#125;&#125;,</span><br><span class="line">   <span class="number">1</span>: &#123;<span class="string">&#x27;1&#x27;</span>: &#123;<span class="number">2</span>&#125;&#125;,</span><br><span class="line">   <span class="number">2</span>: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">nfa = NFA(transition_table, &#123;<span class="number">0</span>&#125;, &#123;<span class="number">2</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(nfa.process(<span class="string">&#x27;10101&#x27;</span>))  <span class="comment"># True, as &#x27;01&#x27; is a substring</span></span><br><span class="line"><span class="built_in">print</span>(nfa.process(<span class="string">&#x27;1111&#x27;</span>))   <span class="comment"># False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="DFA-vs-NFA-in-Handling-Different-Tasks"><a href="#DFA-vs-NFA-in-Handling-Different-Tasks" class="headerlink" title="DFA vs NFA in Handling Different Tasks"></a><strong>DFA vs NFA in Handling Different Tasks</strong></h4><ul>
+<li><strong>DFAs</strong> are faster and easier to implement in practice because of their deterministic nature. They are predictable, and given an input string, there’s only one possible state at any time.</li>
+<li><strong>NFAs</strong> offer more flexibility and simplicity in design. However, they require more complex computation to handle non-determinism, as multiple states may need to be tracked simultaneously.</li>
+</ul>
+<p>In computational theory, <strong>DFAs</strong> and <strong>NFAs</strong> are equivalent in power, meaning any language that can be recognized by an NFA can also be recognized by a DFA (though converting an NFA to a DFA can lead to exponential growth in the number of states).</p>
+<hr>
+<h3 id="Conclusion-Blending-Determinism-and-Non-Determinism"><a href="#Conclusion-Blending-Determinism-and-Non-Determinism" class="headerlink" title="Conclusion: Blending Determinism and Non-Determinism"></a><strong>Conclusion: Blending Determinism and Non-Determinism</strong></h3><p>Determinism and non-determinism are foundational concepts in both philosophical and mathematical domains. While deterministic systems allow predictability and order, non-determinism introduces flexibility and accounts for uncertainty, which is critical for modeling real-world processes. Whether in the context of linguistic models, automata theory, or information systems, blending deterministic and non-deterministic elements enables the creation of robust, flexible models for solving complex problems.</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/nlp-docs/2024/09/17/compositionality/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Compositionality
+                
+            </div>
+        </a>
+    
+    
+        <a href="/nlp-docs/2024/09/02/intentionality/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Naturalizing Intentions</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside id="sidebar-right">
+                <aside id="right-sidebar">
+    <div class="timeline-container">
+        
+                <!-- Year Marker -->
+                <div class="timeline-row timeline-year">
+                    <span class="timeline-icon"><i class="fa fa-calendar-o"></i></span>
+                    <h2 class="timeline-title">2024</h2>
+                </div>
+        
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-11 (2)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/11/23/measuring-subjectivity/">Measuring Subjectivity</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-11-23</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/11/18/sgd/">Understanding SGD</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-11-18</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-09 (5)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/29/quant-belief/">Quantifying Beliefs</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-29</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/17/compositionality/">Compositionality</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/determinism/">Intro to Determinism</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/intentionality/">Naturalizing Intentions</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/qulia/">Understanding Qualia</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-08 (4)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/17/transformer/">The GPT Architecture</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-17</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/13/mdn-nlp/">Contemporary NLP</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-13</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/13/philo-o-mind/">Philosophy of Mind</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-13</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/03/mutual-info/">Mutual Information</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-03</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-07 (7)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/27/vae/">Variational Families</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-27</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/23/viterbi/">Viterbi Algorithm</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-23</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-16</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-14</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/11/place-holder/">Intro &amp; Overview</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-11</span>
+                        <span><i class="fa fa-folder-open"></i> </span>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div> <!-- Close the last month's timeline-posts -->
+    </div>
+</aside>
+
+            </aside>
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Shiyi S &copy; 2024 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+        </div>
+    </div>
+</footer>
+
+        
+    
+        
+<script src="/nlp-docs/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/nlp-docs/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="/nlp-docs/js/main.js"></script>
+    <script src="/nlp-docs/js/dots.js"></script>
+    <script src="/nlp-docs/js/yt-bars.js"></script>
+
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/nlp-docs/js/main.js"></script>
+
+
+    </div>
+</html>

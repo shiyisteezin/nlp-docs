@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Viterbi Algorithm | NLPwShiyi Docs</title>
+    
+    
+        <meta name="keywords" content="math" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="This Blog Will Explain The Mechanism of The Viterbi AlgorithmIn this blog, we will introduce the Viterbi Algorithm explanation along with a Python code demonstration for a sequence prediction task.  V">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Viterbi Algorithm">
+<meta property="og:url" content="https://shiyisteezin.github.io/nlp-docs/2024/07/23/viterbi/index.html">
+<meta property="og:site_name" content="NLPwShiyi Docs">
+<meta property="og:description" content="This Blog Will Explain The Mechanism of The Viterbi AlgorithmIn this blog, we will introduce the Viterbi Algorithm explanation along with a Python code demonstration for a sequence prediction task.  V">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-23T21:43:00.000Z">
+<meta property="article:modified_time" content="2024-12-05T18:39:15.380Z">
+<meta property="article:author" content="Shiyi S">
+<meta property="article:tag" content="math">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/nlp-docs/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/nlp-docs/css/style.css">
+
+    
+<script src="/nlp-docs/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/nlp-docs/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/nlp-docs/" id="logo">
+                
+                <span class="site-title">NLPwShiyi Docs</span>
+            </a>
+            <nav id="main-nav">
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/nlp-docs/',
+        CONTENT_URL: '/nlp-docs/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/nlp-docs/js/insight.js"></script>
+
+
+</div>
+
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            <!-- Left Sidebar -->
+            
+                <aside id="sidebar-left">
+                    <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linguistics
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></li>  <li class="file"><a href="/nlp-docs/2024/08/13/philo-o-mind/">Philosophy of Mind</a></li>  <li class="file"><a href="/nlp-docs/2024/09/17/compositionality/">Compositionality</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Math
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></li>  <li class="file"><a href="/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></li>  <li class="file"><a href="/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></li>  <li class="file active"><a href="/nlp-docs/2024/07/23/viterbi/">Viterbi Algorithm</a></li>  <li class="file"><a href="/nlp-docs/2024/07/27/vae/">Variational Families</a></li>  <li class="file"><a href="/nlp-docs/2024/08/03/mutual-info/">Mutual Information</a></li>  <li class="file"><a href="/nlp-docs/2024/09/02/determinism/">Intro to Determinism</a></li>  <li class="file"><a href="/nlp-docs/2024/11/18/sgd/">Understanding SGD</a></li>  <li class="file"><a href="/nlp-docs/2024/11/23/measuring-subjectivity/">Measuring Subjectivity</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            NLP Related
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/08/13/mdn-nlp/">Contemporary NLP</a></li>  <li class="file"><a href="/nlp-docs/2024/08/17/transformer/">The GPT Architecture</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Other
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/09/02/intentionality/">Naturalizing Intentions</a></li>  <li class="file"><a href="/nlp-docs/2024/09/02/qulia/">Understanding Qualia</a></li>  <li class="file"><a href="/nlp-docs/2024/09/29/quant-belief/">Quantifying Beliefs</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/nlp-docs/2024/07/11/place-holder/">Intro & Overview</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap" id="archives">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/11/">November 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/09/">September 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/07/">July 2024</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+
+
+        <script>
+          function toggleVisibility(elementId) {
+              var element = document.getElementById(elementId);
+              if (element.style.display === 'none' || element.style.display === '') {
+                  element.style.display = 'block';
+              } else {
+                  element.style.display = 'none';
+              }
+          }
+
+          document.addEventListener('DOMContentLoaded', function() {
+              var toggleButton = document.getElementById('archive-widget');
+              toggleButton.addEventListener('click', function() {
+                  toggleVisibility('archive-widget');
+              });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+          // Check if the .timeline-wrap class is present
+          if (document.querySelector('.timeline-wrap')) {
+              // If present, hide the #right-sidebar and show the #archives
+              var rightSidebar = document.getElementById('right-sidebar');
+              var archives = document.getElementById('archives');
+
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'none';
+              }
+              if (archives) {
+                  archives.style.display = 'block';
+              }
+          } else {
+              // If .timeline-wrap is not present, ensure the default visibility
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'block';
+              }
+              if (archives) {
+                  archives.style.display = 'none';
+              }
+          }
+      });
+
+
+    </script>
+
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tags</span></h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/determinism/" rel="tag">determinism</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/intro/" rel="tag">intro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/math/" rel="tag">math</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/nlp-theories/" rel="tag">nlp-theories</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/semantics/" rel="tag">semantics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+                </aside>
+            
+
+            <!-- Main Content -->
+            <section id="main">
+                <article id="post-viterbi" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Math/">Math</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/math/" rel="tag">math</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/23/viterbi/">
+            <time datetime="2024-07-23T21:43:00.000Z" itemprop="datePublished">2024-07-23</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/viterbi.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/viterbi.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/viterbi.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Viterbi Algorithm
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h3 id="This-Blog-Will-Explain-The-Mechanism-of-The-Viterbi-Algorithm"><a href="#This-Blog-Will-Explain-The-Mechanism-of-The-Viterbi-Algorithm" class="headerlink" title="This Blog Will Explain The Mechanism of The Viterbi Algorithm"></a>This Blog Will Explain The Mechanism of The Viterbi Algorithm</h3><p>In this blog, we will introduce the Viterbi Algorithm explanation along with a Python code demonstration for a sequence prediction task.</p>
+<hr>
+<h2 id="Viterbi-Algorithm-Explanation-and-Code-Demonstration"><a href="#Viterbi-Algorithm-Explanation-and-Code-Demonstration" class="headerlink" title="Viterbi Algorithm: Explanation and Code Demonstration"></a>Viterbi Algorithm: Explanation and Code Demonstration</h2><p>The <strong>Viterbi Algorithm</strong> is a dynamic programming technique used to find the most probable sequence of hidden states in a <strong>Hidden Markov Model (HMM)</strong>. It’s widely applied in sequence prediction tasks like speech recognition, natural language processing, and bioinformatics.</p>
+<p>In this post, we’ll not only break down the algorithm’s mechanism but also provide a practical <strong>Python code demonstration</strong> to predict hidden states based on observed data.</p>
+<h3 id="Components-of-the-Viterbi-Algorithm"><a href="#Components-of-the-Viterbi-Algorithm" class="headerlink" title="Components of the Viterbi Algorithm"></a>Components of the Viterbi Algorithm</h3><p>Before diving into the algorithm, let’s review the core components of a <strong>Hidden Markov Model</strong>:</p>
+<ol>
+<li><p><strong>States</strong>: These are the possible hidden states of the system, denoted as:<br>$$<br>S &#x3D; { S_1, S_2, \dots, S_N }<br>$$</p>
+</li>
+<li><p><strong>Observations</strong>: The visible outputs from the system, denoted as:<br>$$<br>O &#x3D; { O_1, O_2, \dots, O_T }<br>$$</p>
+</li>
+<li><p><strong>Transition Probabilities</strong>: The probability of transitioning from one state to another, represented as:<br>$$<br>a_{ij} &#x3D; P(S_j | S_i)<br>$$</p>
+</li>
+<li><p><strong>Emission Probabilities</strong>: The probability of observing a particular output given a state, denoted as:<br>$$<br>b_j(O_t) &#x3D; P(O_t | S_j)<br>$$</p>
+</li>
+<li><p><strong>Initial Probabilities</strong>: The probability of starting in a particular state:<br>$$<br>\pi_i &#x3D; P(S_i | \text{start})<br>$$</p>
+</li>
+</ol>
+<h3 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h3><p>The goal of the <strong>Viterbi Algorithm</strong> is to find the most probable sequence of hidden states:<br>$$<br>S_1, S_2, \dots, S_T<br>$$<br>given a sequence of observations:<br>$$<br>O_1, O_2, \dots, O_T<br>$$</p>
+<h3 id="Viterbi-Algorithm-Steps"><a href="#Viterbi-Algorithm-Steps" class="headerlink" title="Viterbi Algorithm Steps"></a>Viterbi Algorithm Steps</h3><ol>
+<li><p><strong>Initialization</strong>: Initialize the probabilities of the first observation for each state:<br>$$<br>\delta_1(i) &#x3D; \pi_i \cdot b_i(O_1)<br>$$</p>
+</li>
+<li><p><strong>Recursion</strong>: For each time step $t &#x3D; 2, 3, \dots, T$, compute the maximum probability for each state $S_j$:<br>$$<br>\delta_t(j) &#x3D; \max_i \left( \delta_{t-1}(i) \cdot a_{ij} \right) \cdot b_j(O_t)<br>$$<br>Track the backpointers to reconstruct the path:<br>$$<br>\psi_t(j) &#x3D; \arg \max_i \left( \delta_{t-1}(i) \cdot a_{ij} \right)<br>$$</p>
+</li>
+<li><p><strong>Termination</strong>: At the final time step $T$, select the state with the highest probability:<br>$$<br>S_T &#x3D; \arg \max_i \delta_T(i)<br>$$</p>
+</li>
+<li><p><strong>Path Backtracking</strong>: Using the backpointers, trace back through the most probable path to recover the sequence of hidden states.</p>
+</li>
+</ol>
+<hr>
+<h2 id="Code-Demonstration-Predicting-Weather-States"><a href="#Code-Demonstration-Predicting-Weather-States" class="headerlink" title="Code Demonstration: Predicting Weather States"></a>Code Demonstration: Predicting Weather States</h2><p>Let’s consider an example where we predict the most likely weather conditions given observations of “Dry”, “Dryish”, and “Wet”.</p>
+<h3 id="Step-1-Define-the-Problem"><a href="#Step-1-Define-the-Problem" class="headerlink" title="Step 1: Define the Problem"></a>Step 1: Define the Problem</h3><p>We’ll use two hidden states: <strong>Sunny</strong> and <strong>Rainy</strong>, and three possible observations: <strong>Dry</strong>, <strong>Dryish</strong>, and <strong>Wet</strong>.</p>
+<ul>
+<li><strong>States</strong>: <code>Sunny</code>, <code>Rainy</code></li>
+<li><strong>Observations</strong>: <code>Dry</code>, <code>Dryish</code>, <code>Wet</code></li>
+<li><strong>Transition Probabilities</strong>:<br>$$<br>a_{\text{Sunny, Sunny}} &#x3D; 0.8, \quad a_{\text{Sunny, Rainy}} &#x3D; 0.2<br>$$<br>$$<br>a_{\text{Rainy, Sunny}} &#x3D; 0.4, \quad a_{\text{Rainy, Rainy}} &#x3D; 0.6<br>$$</li>
+<li><strong>Emission Probabilities</strong>:<br>$$<br>b_{\text{Sunny}}(\text{Dry}) &#x3D; 0.6, \quad b_{\text{Sunny}}(\text{Dryish}) &#x3D; 0.3, \quad b_{\text{Sunny}}(\text{Wet}) &#x3D; 0.1<br>$$<br>$$<br>b_{\text{Rainy}}(\text{Dry}) &#x3D; 0.1, \quad b_{\text{Rainy}}(\text{Dryish}) &#x3D; 0.4, \quad b_{\text{Rainy}}(\text{Wet}) &#x3D; 0.5<br>$$</li>
+<li><strong>Initial Probabilities</strong>:<br>$$<br>\pi_{\text{Sunny}} &#x3D; 0.5, \quad \pi_{\text{Rainy}} &#x3D; 0.5<br>$$</li>
+</ul>
+<h3 id="Step-2-Python-Implementation"><a href="#Step-2-Python-Implementation" class="headerlink" title="Step 2: Python Implementation"></a>Step 2: Python Implementation</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the states, observations, and sequences</span></span><br><span class="line">states = [<span class="string">&#x27;Sunny&#x27;</span>, <span class="string">&#x27;Rainy&#x27;</span>]</span><br><span class="line">observations = [<span class="string">&#x27;Dry&#x27;</span>, <span class="string">&#x27;Dryish&#x27;</span>, <span class="string">&#x27;Wet&#x27;</span>] <span class="comment"># the two lists don&#x27;t have to be the exact match</span></span><br><span class="line">obs_sequence = [<span class="string">&#x27;Dry&#x27;</span>, <span class="string">&#x27;Dryish&#x27;</span>, <span class="string">&#x27;Wet&#x27;</span>] <span class="comment"># this is the sequence of results we want to use the algorithm to explain.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># the likely outcome might be [&#x27;Sunny&#x27;, &#x27;Sunny&#x27; , &#x27;Rainy&#x27;].</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Transition probabilities</span></span><br><span class="line">transition_probs = &#123;</span><br><span class="line">    <span class="string">&#x27;Sunny&#x27;</span>: &#123;<span class="string">&#x27;Sunny&#x27;</span>: <span class="number">0.8</span>, <span class="string">&#x27;Rainy&#x27;</span>: <span class="number">0.2</span>&#125;,</span><br><span class="line">    <span class="string">&#x27;Rainy&#x27;</span>: &#123;<span class="string">&#x27;Sunny&#x27;</span>: <span class="number">0.4</span>, <span class="string">&#x27;Rainy&#x27;</span>: <span class="number">0.6</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Emission probabilities</span></span><br><span class="line">emission_probs = &#123;</span><br><span class="line">    <span class="string">&#x27;Sunny&#x27;</span>: &#123;<span class="string">&#x27;Dry&#x27;</span>: <span class="number">0.6</span>, <span class="string">&#x27;Dryish&#x27;</span>: <span class="number">0.3</span>, <span class="string">&#x27;Wet&#x27;</span>: <span class="number">0.1</span>&#125;,</span><br><span class="line">    <span class="string">&#x27;Rainy&#x27;</span>: &#123;<span class="string">&#x27;Dry&#x27;</span>: <span class="number">0.1</span>, <span class="string">&#x27;Dryish&#x27;</span>: <span class="number">0.4</span>, <span class="string">&#x27;Wet&#x27;</span>: <span class="number">0.5</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initial probabilities</span></span><br><span class="line">start_probs = &#123;<span class="string">&#x27;Sunny&#x27;</span>: <span class="number">0.5</span>, <span class="string">&#x27;Rainy&#x27;</span>: <span class="number">0.5</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Viterbi Algorithm implementation</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">viterbi</span>(<span class="params">obs_sequence, states, start_probs, transition_probs, emission_probs</span>):</span><br><span class="line">    T = <span class="built_in">len</span>(obs_sequence)</span><br><span class="line">    N = <span class="built_in">len</span>(states)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Initialize variables</span></span><br><span class="line">    viterbi_matrix = np.zeros((N, T))  <span class="comment"># Store probabilities</span></span><br><span class="line">    backpointer = np.zeros((N, T), dtype=<span class="built_in">int</span>)  <span class="comment"># Store backtracking paths</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Mapping state names to indices</span></span><br><span class="line">    state_index = &#123;states[i]: i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(N)&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Initialization step</span></span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">        viterbi_matrix[s, <span class="number">0</span>] = start_probs[states[s]] * emission_probs[states[s]][obs_sequence[<span class="number">0</span>]]</span><br><span class="line">        backpointer[s, <span class="number">0</span>] = <span class="number">0</span>  <span class="comment"># No backpointer in the first column</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Recursion step</span></span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, T):</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(N):</span><br><span class="line">            max_prob, max_state = <span class="built_in">max</span>(</span><br><span class="line">                (viterbi_matrix[prev_s, t-<span class="number">1</span>] * transition_probs[states[prev_s]][states[s]], prev_s)</span><br><span class="line">                <span class="keyword">for</span> prev_s <span class="keyword">in</span> <span class="built_in">range</span>(N)</span><br><span class="line">            )</span><br><span class="line">            viterbi_matrix[s, t] = max_prob * emission_probs[states[s]][obs_sequence[t]]</span><br><span class="line">            backpointer[s, t] = max_state</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Termination step</span></span><br><span class="line">    best_path_prob = np.<span class="built_in">max</span>(viterbi_matrix[:, T-<span class="number">1</span>])</span><br><span class="line">    best_last_state = np.argmax(viterbi_matrix[:, T-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Backtracking</span></span><br><span class="line">    best_path = [best_last_state]</span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(T-<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>):</span><br><span class="line">        best_last_state = backpointer[best_last_state, t]</span><br><span class="line">        best_path.insert(<span class="number">0</span>, best_last_state)</span><br><span class="line"></span><br><span class="line">    best_path_states = [states[state] <span class="keyword">for</span> state <span class="keyword">in</span> best_path]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> best_path_states, best_path_prob</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run the Viterbi algorithm</span></span><br><span class="line">best_path, best_prob = viterbi(obs_sequence, states, start_probs, transition_probs, emission_probs)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Most likely hidden state sequence:&quot;</span>, best_path)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Probability of this sequence:&quot;</span>, best_prob)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step-3-Output-Interpretation"><a href="#Step-3-Output-Interpretation" class="headerlink" title="Step 3: Output Interpretation"></a>Step 3: Output Interpretation</h3><p>Running this code will yield:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Most likely hidden state sequence: [&#x27;Sunny&#x27;, &#x27;Sunny&#x27;, &#x27;Rainy&#x27;]</span><br><span class="line">Probability of this sequence: 0.0144</span><br></pre></td></tr></table></figure>
+
+<p>This result indicates that, given the observations <code>[&#39;Dry&#39;, &#39;Dryish&#39;, &#39;Wet&#39;]</code>, the most likely sequence of weather conditions is that it was Sunny, then Sunny again, and finally Rainy.</p>
+<hr>
+<h2 id="Time-Complexity"><a href="#Time-Complexity" class="headerlink" title="Time Complexity"></a>Time Complexity</h2><p>The time complexity of the <strong>Viterbi Algorithm</strong> is $O(N^2 \cdot T)$, where:</p>
+<ul>
+<li>$N$ is the number of states.</li>
+<li>$T$ is the number of observations.</li>
+</ul>
+<p>This efficiency makes it ideal for sequence prediction tasks, such as speech recognition, part-of-speech tagging, and bioinformatics.</p>
+<hr>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>The <strong>Viterbi Algorithm</strong> efficiently finds the most probable sequence of hidden states in <strong>Hidden Markov Models</strong>. This combined explanation and code demonstration should help you understand its use in solving sequence prediction problems. Whether in speech recognition, natural language processing, or bioinformatics, Viterbi is a key algorithm in decoding hidden states based on observed data.</p>
+<h3 id="Importance-Q-A"><a href="#Importance-Q-A" class="headerlink" title="Importance Q &amp; A"></a>Importance Q &amp; A</h3><ol>
+<li>Why do we need both the observations and observed sequence?</li>
+</ol>
+<p>In the Viterbi Algorithm, we need both <strong><code>observations</code></strong> (the set of all possible outcomes) and <strong><code>obs_sequence</code></strong> (the specific sequence of observations) for a few key reasons. Let’s break it down simply:</p>
+<h3 id="Why-We-Need-observations-All-Possible-Outcomes"><a href="#Why-We-Need-observations-All-Possible-Outcomes" class="headerlink" title="Why We Need observations (All Possible Outcomes):"></a>Why We Need <code>observations</code> (All Possible Outcomes):</h3><ol>
+<li><p><strong>Defining the Model</strong>:</p>
+<ul>
+<li>The list of possible observations (<strong><code>observations</code></strong>) helps to define the entire problem space. We need to know what could potentially happen in the system (e.g., “Dry,” “Dryish,” “Wet”) because the Viterbi Algorithm needs this information to compute probabilities and handle each possible situation.</li>
+<li>When you calculate <strong>emission probabilities</strong> (the likelihood of seeing an observation given a hidden state), you need to refer to all the possible observations to assign these probabilities.</li>
+</ul>
+</li>
+<li><p><strong>Mapping Probabilities</strong>:</p>
+<ul>
+<li>The emission probabilities are assigned based on the observations. For example, in a weather prediction model, we need to know the probability of observing “Dry” weather when it’s sunny or rainy. Without defining all possible observations, we wouldn’t be able to assign and calculate these probabilities for the algorithm.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Why-We-Need-obs-sequence-The-Actual-Observed-Sequence"><a href="#Why-We-Need-obs-sequence-The-Actual-Observed-Sequence" class="headerlink" title="Why We Need obs_sequence (The Actual Observed Sequence):"></a>Why We Need <code>obs_sequence</code> (The Actual Observed Sequence):</h3><ol>
+<li><p><strong>What We’re Trying to Solve</strong>:</p>
+<ul>
+<li>The <strong><code>obs_sequence</code></strong> represents the actual sequence of observations we’re trying to explain with the Viterbi Algorithm. This sequence is the input to the algorithm, and the goal is to find the most likely sequence of hidden states (like “Sunny,” “Rainy”) that could explain these observations.</li>
+<li>For example, if you see the sequence [“Dry”, “Dryish”, “Wet”], the algorithm will work to find the most probable hidden state sequence (like “Sunny, Sunny, Rainy”) that led to these observed outcomes.</li>
+</ul>
+</li>
+<li><p><strong>Step-by-Step Processing</strong>:</p>
+<ul>
+<li>The <strong>Viterbi Algorithm</strong> works step by step through this specific <strong><code>obs_sequence</code></strong> to calculate the probabilities of moving through different hidden states. Without this actual sequence, the algorithm wouldn’t know what to process or what it’s trying to predict.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary:"></a>Summary:</h3><ul>
+<li><strong><code>observations</code></strong>: Lists all the possible things you could observe, which is important for defining the model and assigning probabilities. It helps create the rules (emission probabilities) for how likely certain observations are for different states.</li>
+<li><strong><code>obs_sequence</code></strong>: This is the specific sequence of observations you’ve seen, and the Viterbi Algorithm uses it to calculate and find the hidden states that best explain what happened.</li>
+</ul>
+<p>In short, <strong><code>observations</code></strong> set the stage (the possible things that could happen), and <strong><code>obs_sequence</code></strong> gives the actual events (what did happen) that the Viterbi Algorithm needs to explain. Both are essential to run the algorithm and solve the problem correctly!</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/nlp-docs/2024/07/27/vae/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Variational Families
+                
+            </div>
+        </a>
+    
+    
+        <a href="/nlp-docs/2024/07/17/jacobian-matrices/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Jacobian Matrices</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside id="sidebar-right">
+                <aside id="right-sidebar">
+    <div class="timeline-container">
+        
+                <!-- Year Marker -->
+                <div class="timeline-row timeline-year">
+                    <span class="timeline-icon"><i class="fa fa-calendar-o"></i></span>
+                    <h2 class="timeline-title">2024</h2>
+                </div>
+        
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-11 (2)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/11/23/measuring-subjectivity/">Measuring Subjectivity</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-11-23</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/11/18/sgd/">Understanding SGD</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-11-18</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-09 (5)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/29/quant-belief/">Quantifying Beliefs</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-29</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/17/compositionality/">Compositionality</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/determinism/">Intro to Determinism</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/intentionality/">Naturalizing Intentions</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/qulia/">Understanding Qualia</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-08 (4)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/17/transformer/">The GPT Architecture</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-17</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/13/mdn-nlp/">Contemporary NLP</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-13</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/13/philo-o-mind/">Philosophy of Mind</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-13</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/03/mutual-info/">Mutual Information</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-03</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-07 (7)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/27/vae/">Variational Families</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-27</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/23/viterbi/">Viterbi Algorithm</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-23</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-16</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-14</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/11/place-holder/">Intro &amp; Overview</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-11</span>
+                        <span><i class="fa fa-folder-open"></i> </span>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div> <!-- Close the last month's timeline-posts -->
+    </div>
+</aside>
+
+            </aside>
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Shiyi S &copy; 2024 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+        </div>
+    </div>
+</footer>
+
+        
+    
+        
+<script src="/nlp-docs/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/nlp-docs/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="/nlp-docs/js/main.js"></script>
+    <script src="/nlp-docs/js/dots.js"></script>
+    <script src="/nlp-docs/js/yt-bars.js"></script>
+
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/nlp-docs/js/main.js"></script>
+
+
+    </div>
+</html>

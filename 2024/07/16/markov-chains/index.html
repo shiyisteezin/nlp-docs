@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Markov Processes | NLPwShiyi Docs</title>
+    
+    
+        <meta name="keywords" content="math,stochastic" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Discussions on Markov Processes ContinuedIn a different blog, I noted the use of a markov processes in the context of natural language processing. Now in this blog, we will be going through some impor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markov Processes">
+<meta property="og:url" content="https://shiyisteezin.github.io/nlp-docs/2024/07/16/markov-chains/index.html">
+<meta property="og:site_name" content="NLPwShiyi Docs">
+<meta property="og:description" content="Discussions on Markov Processes ContinuedIn a different blog, I noted the use of a markov processes in the context of natural language processing. Now in this blog, we will be going through some impor">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-16T12:13:20.000Z">
+<meta property="article:modified_time" content="2024-12-05T18:39:15.374Z">
+<meta property="article:author" content="Shiyi S">
+<meta property="article:tag" content="math">
+<meta property="article:tag" content="stochastic">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/nlp-docs/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/nlp-docs/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/nlp-docs/css/style.css">
+
+    
+<script src="/nlp-docs/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/nlp-docs/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/nlp-docs/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+
+
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/nlp-docs/" id="logo">
+                
+                <span class="site-title">NLPwShiyi Docs</span>
+            </a>
+            <nav id="main-nav">
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/nlp-docs/',
+        CONTENT_URL: '/nlp-docs/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/nlp-docs/js/insight.js"></script>
+
+
+</div>
+
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            <!-- Left Sidebar -->
+            
+                <aside id="sidebar-left">
+                    <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>categories</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Linguistics
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></li>  <li class="file"><a href="/nlp-docs/2024/08/13/philo-o-mind/">Philosophy of Mind</a></li>  <li class="file"><a href="/nlp-docs/2024/09/17/compositionality/">Compositionality</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Math
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></li>  <li class="file active"><a href="/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></li>  <li class="file"><a href="/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></li>  <li class="file"><a href="/nlp-docs/2024/07/23/viterbi/">Viterbi Algorithm</a></li>  <li class="file"><a href="/nlp-docs/2024/07/27/vae/">Variational Families</a></li>  <li class="file"><a href="/nlp-docs/2024/08/03/mutual-info/">Mutual Information</a></li>  <li class="file"><a href="/nlp-docs/2024/09/02/determinism/">Intro to Determinism</a></li>  <li class="file"><a href="/nlp-docs/2024/11/18/sgd/">Understanding SGD</a></li>  <li class="file"><a href="/nlp-docs/2024/11/23/measuring-subjectivity/">Measuring Subjectivity</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            NLP Related
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/08/13/mdn-nlp/">Contemporary NLP</a></li>  <li class="file"><a href="/nlp-docs/2024/08/17/transformer/">The GPT Architecture</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Other
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/nlp-docs/2024/09/02/intentionality/">Naturalizing Intentions</a></li>  <li class="file"><a href="/nlp-docs/2024/09/02/qulia/">Understanding Qualia</a></li>  <li class="file"><a href="/nlp-docs/2024/09/29/quant-belief/">Quantifying Beliefs</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/nlp-docs/2024/07/11/place-holder/">Intro & Overview</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap" id="archives">
+        <h3 class="widget-title"><span>archives</span></h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/11/">November 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/09/">September 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/08/">August 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/nlp-docs/archives/2024/07/">July 2024</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+
+
+        <script>
+          function toggleVisibility(elementId) {
+              var element = document.getElementById(elementId);
+              if (element.style.display === 'none' || element.style.display === '') {
+                  element.style.display = 'block';
+              } else {
+                  element.style.display = 'none';
+              }
+          }
+
+          document.addEventListener('DOMContentLoaded', function() {
+              var toggleButton = document.getElementById('archive-widget');
+              toggleButton.addEventListener('click', function() {
+                  toggleVisibility('archive-widget');
+              });
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+          // Check if the .timeline-wrap class is present
+          if (document.querySelector('.timeline-wrap')) {
+              // If present, hide the #right-sidebar and show the #archives
+              var rightSidebar = document.getElementById('right-sidebar');
+              var archives = document.getElementById('archives');
+
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'none';
+              }
+              if (archives) {
+                  archives.style.display = 'block';
+              }
+          } else {
+              // If .timeline-wrap is not present, ensure the default visibility
+              if (rightSidebar) {
+                  rightSidebar.style.display = 'block';
+              }
+              if (archives) {
+                  archives.style.display = 'none';
+              }
+          }
+      });
+
+
+    </script>
+
+    </div>
+
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>tags</span></h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/determinism/" rel="tag">determinism</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/intro/" rel="tag">intro</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/math/" rel="tag">math</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/nlp-theories/" rel="tag">nlp-theories</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/semantics/" rel="tag">semantics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a><span class="tag-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+                </aside>
+            
+
+            <!-- Main Content -->
+            <section id="main">
+                <article id="search-markov-chains" class="article article-type-search" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/nlp-docs/categories/Math/">Math</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/nlp-docs/tags/math/" rel="tag">math</a>, <a class="tag-link-link" href="/nlp-docs/tags/stochastic/" rel="tag">stochastic</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/nlp-docs/2024/07/16/markov-chains/">
+            <time datetime="2024-07-16T12:13:20.000Z" itemprop="datePublished">2024-07-16</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/raw/writing/source/_posts/markov-chains.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/edit/writing/source/_posts/markov-chains.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/shiyis/Wiki-site/commits/writing/source/_posts/markov-chains.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Markov Processes
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <h3 id="Discussions-on-Markov-Processes-Continued"><a href="#Discussions-on-Markov-Processes-Continued" class="headerlink" title="Discussions on Markov Processes Continued"></a>Discussions on Markov Processes Continued</h3><p>In a different blog, I noted the use of a markov processes in the context of natural language processing. Now in this blog, we will be going through some important details with regard to the concept.</p>
+<p>We will go through some code in the subsequent paragraph with respect to how to simulate Markov Chain in coding.</p>
+<h4 id="Markov-Chain-Basics"><a href="#Markov-Chain-Basics" class="headerlink" title="Markov Chain Basics"></a>Markov Chain Basics</h4><p>A Markov chain is a mathematical system that undergoes transitions from one state to another within a finite or countable number of states. It is a stochastic process that satisfies the Markov property, which states that the future state depends only on the current state and not on the sequence of events that preceded it.</p>
+<h4 id="Components-of-a-Markov-Chain"><a href="#Components-of-a-Markov-Chain" class="headerlink" title="Components of a Markov Chain"></a>Components of a Markov Chain</h4><ol>
+<li><p><strong>States</strong>: The different possible conditions or configurations the system can be in.</p>
+<ul>
+<li>Let’s denote the set of all states as $ S &#x3D; { s_1, s_2, \ldots, s_n } $.</li>
+</ul>
+</li>
+<li><p><strong>Transition Probabilities</strong>: The probabilities of moving from one state to another.</p>
+<ul>
+<li>Denoted by $ P_{ij} &#x3D; P(X_{t+1} &#x3D; s_j \mid X_t &#x3D; s_i) $, where $ P_{ij} $ is the probability of transitioning from state $ s_i $ to state $ s_j $.</li>
+</ul>
+</li>
+<li><p><strong>Transition Matrix</strong>: A matrix $ P $ where each element $ P_{ij} $ represents the transition probability from state $ s_i $ to state $ s_j $.<br>$$<br>  P &#x3D; \begin{pmatrix}<br>  P_{11} &amp; P_{12} &amp; \cdots &amp; P_{1n} \cr<br>  P_{21} &amp; P_{22} &amp; \cdots &amp; P_{2n} \cr<br>  \vdots &amp; \vdots &amp; \ddots &amp; \vdots \cr<br>  P_{n1} &amp; P_{n2} &amp; \cdots &amp; P_{nn}<br>  \end{pmatrix}<br>$$</p>
+</li>
+</ol>
+<h4 id="Markov-Property"><a href="#Markov-Property" class="headerlink" title="Markov Property"></a>Markov Property</h4><p>The Markov property states that the probability of transitioning to the next state depends only on the current state and not on the past states:<br>$$ P(X_{t+1} &#x3D; s_j \mid X_t &#x3D; s_i, X_{t-1} &#x3D; s_{i-1}, \ldots, X_0 &#x3D; s_0) $$<br>$$ \qquad \quad &#x3D; P(X_{t+1} &#x3D; s_j \mid X_t &#x3D; s_i) $$</p>
+<h4 id="Step-by-Step-Process"><a href="#Step-by-Step-Process" class="headerlink" title="Step-by-Step Process"></a>Step-by-Step Process</h4><p>Let’s go through the process of a Markov chain step by step.</p>
+<h4 id="Step-1-Define-the-States"><a href="#Step-1-Define-the-States" class="headerlink" title="Step 1: Define the States"></a>Step 1: Define the States</h4><p>Identify all possible states of the system. Suppose we have a simple weather system with three states:</p>
+<ul>
+<li>$ s_1 $: Sunny</li>
+<li>$ s_2 $: Cloudy</li>
+<li>$ s_3 $: Rainy</li>
+</ul>
+<h4 id="Step-2-Define-the-Transition-Probabilities"><a href="#Step-2-Define-the-Transition-Probabilities" class="headerlink" title="Step 2: Define the Transition Probabilities"></a>Step 2: Define the Transition Probabilities</h4><p>Determine the probabilities of moving from one state to another. For example, the transition probabilities might be:</p>
+<ul>
+<li>$ P_{11} &#x3D; 0.7 $ (probability of sunny to sunny)</li>
+<li>$ P_{12} &#x3D; 0.2 $ (probability of sunny to cloudy)</li>
+<li>$ P_{13} &#x3D; 0.1 $ (probability of sunny to rainy)</li>
+<li>$ P_{21} &#x3D; 0.3 $ (probability of cloudy to sunny)</li>
+<li>$ P_{22} &#x3D; 0.4 $ (probability of cloudy to cloudy)</li>
+<li>$ P_{23} &#x3D; 0.3 $ (probability of cloudy to rainy)</li>
+<li>$ P_{31} &#x3D; 0.2 $ (probability of rainy to sunny)</li>
+<li>$ P_{32} &#x3D; 0.3 $ (probability of rainy to cloudy)</li>
+<li>$ P_{33} &#x3D; 0.5 $ (probability of rainy to rainy)</li>
+</ul>
+<p>These can be represented in the transition matrix $ P $:</p>
+<p>$$ P &#x3D; \begin{pmatrix}<br>    0.7 &amp; 0.2 &amp; 0.1 \cr<br>    0.3 &amp; 0.4 &amp; 0.3 \cr<br>    0.2 &amp; 0.3 &amp; 0.5<br>\end{pmatrix} $$</p>
+<h4 id="Step-3-Initial-State-Distribution"><a href="#Step-3-Initial-State-Distribution" class="headerlink" title="Step 3: Initial State Distribution"></a>Step 3: Initial State Distribution</h4><p>Define the initial state distribution vector $ \pi $, which represents the probability distribution of starting in each state. For example, if we start with a 100% chance of it being sunny:</p>
+<p>$$ \pi &#x3D; \begin{pmatrix}<br>    1 \cr<br>    0 \cr<br>    0<br>\end{pmatrix} $$</p>
+<h4 id="Step-4-State-Prediction"><a href="#Step-4-State-Prediction" class="headerlink" title="Step 4: State Prediction"></a>Step 4: State Prediction</h4><p>To predict the state distribution after one step, multiply the initial state distribution vector $ \pi $ by the transition matrix $ P $:</p>
+<p>$$ \pi^{(1)} &#x3D; \pi P $$</p>
+<p>$$ \pi^{(1)} &#x3D; \begin{pmatrix}<br>    1 &amp; 0 &amp; 0<br>\end{pmatrix}  \begin{pmatrix}<br>    0.7 &amp; 0.2 &amp; 0.1 \cr<br>    0.3 &amp; 0.4 &amp; 0.3 \cr<br>    0.2 &amp; 0.3 &amp; 0.5<br>\end{pmatrix} $$</p>
+<p>$$ \pi^{(1)} &#x3D; \begin{pmatrix}<br>    0.7 &amp; 0.2 &amp; 0.1<br>\end{pmatrix} $$</p>
+<p>This tells us that after one step, there’s a 70% chance of it being sunny, a 20% chance of it being cloudy, and a 10% chance of it being rainy.</p>
+<h4 id="Step-5-Long-Term-Behavior"><a href="#Step-5-Long-Term-Behavior" class="headerlink" title="Step 5: Long-Term Behavior"></a>Step 5: Long-Term Behavior</h4><p>To find the steady-state distribution (long-term behavior), solve for $ \pi $ in the equation:<br>$ \pi P &#x3D; \pi $<br>This often involves solving a system of linear equations. The steady-state distribution is the vector $ \pi $ that remains unchanged after application of the transition matrix $ P $.</p>
+<h4 id="Example-Calculation"><a href="#Example-Calculation" class="headerlink" title="Example Calculation"></a>Example Calculation</h4><p>If we continue the prediction for multiple steps, we can see how the state distribution evolves over time. For example, after two steps:</p>
+<p>$$ \pi^{(2)} &#x3D; \pi^{(1)} P $$</p>
+<p>$$ \pi^{(2)} &#x3D; \begin{pmatrix}<br>    0.7 &amp; 0.2 &amp; 0.1<br>\end{pmatrix} \begin{pmatrix}<br>    0.7 &amp; 0.2 &amp; 0.1 \cr<br>    0.3 &amp; 0.4 &amp; 0.3 \cr<br>    0.2 &amp; 0.3 &amp; 0.5<br>\end{pmatrix} $$</p>
+<p>$$ \pi^{(2)} &#x3D; \begin{pmatrix}<br>  0.7 \cdot 0.7 + 0.2 \cdot 0.3 + 0.1 \cdot 0.2 \cr<br>  0.7 \cdot 0.2 + 0.2 \cdot 0.4 + 0.1 \cdot 0.3 \cr<br>  0.7 \cdot 0.1 + 0.2 \cdot 0.3 + 0.1 \cdot 0.5<br>\end{pmatrix} $$</p>
+<p>$$ \pi^{(2)} &#x3D; \begin{pmatrix}<br>    0.53 &amp; 0.26 &amp; 0.21<br>\end{pmatrix} $$</p>
+<p>So after two steps, there’s a 53% chance of it being sunny, a 26% chance of it being cloudy, and a 21% chance of it being rainy.</p>
+<h4 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h4><p>A Markov chain is a powerful tool for modeling stochastic processes where the next state depends only on the current state. The key components include states, transition probabilities, and the transition matrix. The process involves defining the states and transition probabilities, computing state predictions, and analyzing long-term behavior through steady-state distributions.</p>
+<p>In this example, we define a transition matrix P for a 3-state Markov process. We then define a function simulate_markov that takes the transition matrix, the number of states, and the number of steps to simulate as input, and returns a list of the system’s states at each time step.</p>
+<p>The function initializes the state vector to all zeros, with a 1 in the first position to indicate that the system starts in state 0. It then simulates the Markov process by iteratively selecting the next state based on the current state and the transition probabilities. The current state is added to a history list at each time step.</p>
+<p>Finally, we simulate the Markov process for 100 steps and print the resulting state history.</p>
+<h3 id="In-What-Scenarios-Is-Markov-Chain-Applicable"><a href="#In-What-Scenarios-Is-Markov-Chain-Applicable" class="headerlink" title="In What Scenarios Is Markov Chain Applicable?"></a>In What Scenarios Is Markov Chain Applicable?</h3><p>Simulating all these processes using Markov processes can be quite extensive. However, I can provide a basic framework and example for a few of these applications, demonstrating how Markov processes can be applied. We will use Python and some common libraries such as NumPy for these simulations.</p>
+<p>This section breaks down a simple example of how to build a simple markov chain in code example.</p>
+<p>Sure! Here’s an updated version of all the examples where we retain the <strong>calculated state vector</strong> (probability distribution) between steps, avoiding the unnecessary reset to a one-hot encoded vector.</p>
+<h3 id="Updated-Example-1-Modeling-Stock-Prices-with-Dot-Product"><a href="#Updated-Example-1-Modeling-Stock-Prices-with-Dot-Product" class="headerlink" title="Updated Example 1: Modeling Stock Prices with Dot Product"></a>Updated Example 1: Modeling Stock Prices with Dot Product</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define states (price levels)</span></span><br><span class="line">states = np.array([<span class="number">90</span>, <span class="number">100</span>, <span class="number">110</span>, <span class="number">120</span>])</span><br><span class="line">n_states = <span class="built_in">len</span>(states)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the transition matrix</span></span><br><span class="line">P = np.array([</span><br><span class="line">    [<span class="number">0.7</span>, <span class="number">0.2</span>, <span class="number">0.1</span>, <span class="number">0.0</span>],  <span class="comment"># From 90</span></span><br><span class="line">    [<span class="number">0.1</span>, <span class="number">0.7</span>, <span class="number">0.2</span>, <span class="number">0.0</span>],  <span class="comment"># From 100</span></span><br><span class="line">    [<span class="number">0.0</span>, <span class="number">0.2</span>, <span class="number">0.7</span>, <span class="number">0.1</span>],  <span class="comment"># From 110</span></span><br><span class="line">    [<span class="number">0.0</span>, <span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.7</span>],  <span class="comment"># From 120</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initial state (one-hot vector for state 100)</span></span><br><span class="line">state_vector = np.zeros(n_states)</span><br><span class="line">state_vector[<span class="number">1</span>] = <span class="number">1</span>  <span class="comment"># Start in state 100</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Number of steps to simulate</span></span><br><span class="line">n_steps = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Track price history</span></span><br><span class="line">price_history = [states[np.argmax(state_vector)]]  <span class="comment"># Start price history</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n_steps):</span><br><span class="line">    <span class="comment"># Perform dot product to get the next state probabilities</span></span><br><span class="line">    state_vector = np.dot(state_vector, P)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Choose the next state based on the resulting probabilities</span></span><br><span class="line">    next_state = np.random.choice(n_states, p=state_vector)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Store the price history for the next state</span></span><br><span class="line">    price_history.append(states[next_state])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the results</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">plt.plot(price_history)</span><br><span class="line">plt.title(<span class="string">&#x27;Simulated Stock Prices Using Markov Process with Dot Product&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Time Steps&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Price&#x27;</span>)</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Updated-Example-2-Disease-Progression-with-Dot-Product"><a href="#Updated-Example-2-Disease-Progression-with-Dot-Product" class="headerlink" title="Updated Example 2: Disease Progression with Dot Product"></a>Updated Example 2: Disease Progression with Dot Product</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define states (health conditions)</span></span><br><span class="line">states = [<span class="string">&quot;Healthy&quot;</span>, <span class="string">&quot;Sick&quot;</span>, <span class="string">&quot;Recovered&quot;</span>]</span><br><span class="line">n_states = <span class="built_in">len</span>(states)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the transition matrix</span></span><br><span class="line">P = np.array([</span><br><span class="line">    [<span class="number">0.85</span>, <span class="number">0.10</span>, <span class="number">0.05</span>],  <span class="comment"># From Healthy</span></span><br><span class="line">    [<span class="number">0.15</span>, <span class="number">0.70</span>, <span class="number">0.15</span>],  <span class="comment"># From Sick</span></span><br><span class="line">    [<span class="number">0.05</span>, <span class="number">0.10</span>, <span class="number">0.85</span>],  <span class="comment"># From Recovered</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initial state (one-hot vector for Healthy)</span></span><br><span class="line">state_vector = np.zeros(n_states)</span><br><span class="line">state_vector[<span class="number">0</span>] = <span class="number">1</span>  <span class="comment"># Start as Healthy</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Number of steps to simulate</span></span><br><span class="line">n_steps = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Track health history</span></span><br><span class="line">health_history = [states[np.argmax(state_vector)]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n_steps):</span><br><span class="line">    <span class="comment"># Perform dot product to get the next state probabilities</span></span><br><span class="line">    state_vector = np.dot(state_vector, P)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Choose the next state based on the resulting probabilities</span></span><br><span class="line">    next_state = np.random.choice(n_states, p=state_vector)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Store the health history</span></span><br><span class="line">    health_history.append(states[next_state])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print the results</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Health Condition Over Time:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot; -&gt; &quot;</span>.join(health_history))</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Updated-Example-3-Queueing-Systems-with-Dot-Product"><a href="#Updated-Example-3-Queueing-Systems-with-Dot-Product" class="headerlink" title="Updated Example 3: Queueing Systems with Dot Product"></a>Updated Example 3: Queueing Systems with Dot Product</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define states (number of customers in queue)</span></span><br><span class="line">states = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]  <span class="comment"># Queue capacity is 5</span></span><br><span class="line">n_states = <span class="built_in">len</span>(states)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the transition matrix</span></span><br><span class="line">P = np.array([</span><br><span class="line">    [<span class="number">0.1</span>, <span class="number">0.9</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],  <span class="comment"># From 0 customers</span></span><br><span class="line">    [<span class="number">0.5</span>, <span class="number">0.4</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],  <span class="comment"># From 1 customer</span></span><br><span class="line">    [<span class="number">0.2</span>, <span class="number">0.5</span>, <span class="number">0.3</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],  <span class="comment"># From 2 customers</span></span><br><span class="line">    [<span class="number">0.0</span>, <span class="number">0.3</span>, <span class="number">0.5</span>, <span class="number">0.2</span>, <span class="number">0.0</span>, <span class="number">0.0</span>],  <span class="comment"># From 3 customers</span></span><br><span class="line">    [<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.4</span>, <span class="number">0.5</span>, <span class="number">0.1</span>, <span class="number">0.0</span>],  <span class="comment"># From 4 customers</span></span><br><span class="line">    [<span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.0</span>, <span class="number">0.5</span>, <span class="number">0.4</span>, <span class="number">0.1</span>],  <span class="comment"># From 5 customers</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initial state (one-hot vector for an empty queue)</span></span><br><span class="line">state_vector = np.zeros(n_states)</span><br><span class="line">state_vector[<span class="number">0</span>] = <span class="number">1</span>  <span class="comment"># Start with empty queue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Number of steps to simulate</span></span><br><span class="line">n_steps = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Track queue history</span></span><br><span class="line">queue_history = [states[np.argmax(state_vector)]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n_steps):</span><br><span class="line">    <span class="comment"># Perform dot product to get the next state probabilities</span></span><br><span class="line">    state_vector = np.dot(state_vector, P)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Choose the next state based on the resulting probabilities</span></span><br><span class="line">    next_state = np.random.choice(n_states, p=state_vector)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Store the queue history</span></span><br><span class="line">    queue_history.append(states[next_state])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the results</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">plt.plot(queue_history)</span><br><span class="line">plt.title(<span class="string">&#x27;Simulated Queue Length Using Markov Process with Dot Product&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Time Steps&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Number of Customers in Queue&#x27;</span>)</span><br><span class="line">plt.grid(<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Updated-Example-4-Customer-Loyalty-with-Dot-Product"><a href="#Updated-Example-4-Customer-Loyalty-with-Dot-Product" class="headerlink" title="Updated Example 4: Customer Loyalty with Dot Product"></a>Updated Example 4: Customer Loyalty with Dot Product</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define states (customer states)</span></span><br><span class="line">states = [<span class="string">&quot;Active&quot;</span>, <span class="string">&quot;Inactive&quot;</span>, <span class="string">&quot;Loyal&quot;</span>]</span><br><span class="line">n_states = <span class="built_in">len</span>(states)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the transition matrix</span></span><br><span class="line">P = np.array([</span><br><span class="line">    [<span class="number">0.7</span>, <span class="number">0.2</span>, <span class="number">0.1</span>],  <span class="comment"># From Active</span></span><br><span class="line">    [<span class="number">0.3</span>, <span class="number">0.6</span>, <span class="number">0.1</span>],  <span class="comment"># From Inactive</span></span><br><span class="line">    [<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.7</span>],  <span class="comment"># From Loyal</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initial state (one-hot vector for Active)</span></span><br><span class="line">state_vector = np.zeros(n_states)</span><br><span class="line">state_vector[<span class="number">0</span>] = <span class="number">1</span>  <span class="comment"># Start as Active</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Number of steps to simulate</span></span><br><span class="line">n_steps = <span class="number">50</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Track loyalty history</span></span><br><span class="line">loyalty_history = [states[np.argmax(state_vector)]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n_steps):</span><br><span class="line">    <span class="comment"># Perform dot product to get the next state probabilities</span></span><br><span class="line">    state_vector = np.dot(state_vector, P)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Choose the next state based on the resulting probabilities</span></span><br><span class="line">    next_state = np.random.choice(n_states, p=state_vector)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Store the loyalty history</span></span><br><span class="line">    loyalty_history.append(states[next_state])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print the results</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Customer Loyalty Over Time:&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot; -&gt; &quot;</span>.join(loyalty_history))</span><br></pre></td></tr></table></figure>
+<h3 id="Summary-1"><a href="#Summary-1" class="headerlink" title="Summary"></a>Summary</h3><p>This framework can be extended to simulate other processes like economic forecasting, pharmacokinetics, network protocols, etc.</p>
+<p>Each simulation contains these properties:</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.</td>
+<td><strong>States</strong></td>
+<td>A system can exist in different states, representing distinct configurations or conditions. Denoted by symbols, numbers, or labels.</td>
+</tr>
+<tr>
+<td>2.</td>
+<td><strong>Transition Probabilities</strong></td>
+<td>Markov processes are characterized by transition probabilities, which determine the likelihood of moving from one state to another in the next time step. These probabilities are often organized into a transition probability matrix.</td>
+</tr>
+<tr>
+<td>3.</td>
+<td><strong>Transition Probability Matrix</strong></td>
+<td>A square matrix where each element represents the probability of transitioning from one state to another. Rows correspond to the current state, and columns correspond to the next state.</td>
+</tr>
+<tr>
+<td>4.</td>
+<td><strong>Markov Property</strong></td>
+<td>The key feature of Markov processes is the Markov property, stating that the future evolution of the system depends only on its current state and is independent of how the system reached its current state.</td>
+</tr>
+<tr>
+<td>5.</td>
+<td><strong>Homogeneity</strong></td>
+<td>Markov processes are often assumed to be homogeneous, meaning that transition probabilities do not change over time. The system’s dynamics are consistent throughout.</td>
+</tr>
+<tr>
+<td>6.</td>
+<td><strong>Continuous and Discrete Time</strong></td>
+<td>Markov processes can be classified into continuous-time and discrete-time processes based on whether the state transitions occur at every instant or at discrete time intervals.</td>
+</tr>
+<tr>
+<td>7.</td>
+<td><strong>Stationary Distribution</strong></td>
+<td>In a steady state, the system may reach a stationary distribution, where the probabilities of being in each state remain constant over time.</td>
+</tr>
+<tr>
+<td>8.</td>
+<td><strong>Absorbing and Transient States</strong></td>
+<td>Some states may be absorbing, meaning that once entered, the system stays in that state permanently. Transient states are those from which the system may leave and not return.</td>
+</tr>
+<tr>
+<td>9.</td>
+<td><strong>Applications</strong></td>
+<td>Markov processes find applications in various fields, including physics, economics, biology, and computer science, for modeling dynamic systems with probabilistic transitions.</td>
+</tr>
+<tr>
+<td>10.</td>
+<td><strong>Markov Chain</strong></td>
+<td>A specific type of Markov process where the state space is discrete and the time parameter takes on discrete values.</td>
+</tr>
+</tbody></table>
+<p>This basic approach can be adapted and extended to suit the specific characteristics and requirements of each application.</p>
+<h4 id="Markov-Chain"><a href="#Markov-Chain" class="headerlink" title="Markov Chain"></a>Markov Chain</h4><p>A Markov chain is a specific type of Markov process that deals with discrete states and discrete time steps. It is characterized by the following:</p>
+<ol>
+<li><strong>Discrete State Space</strong>: The set of possible states $ S &#x3D; {s_1, s_2, \ldots, s_n} $ is finite or countable.</li>
+<li><strong>Discrete Time Steps</strong>: The process evolves in discrete time steps $ t &#x3D; 0, 1, 2, \ldots $.</li>
+<li><strong>Markov Property</strong>: The probability of transitioning to the next state depends only on the current state and not on the sequence of events that preceded it.</li>
+</ol>
+<h6 id="Formal-Definition"><a href="#Formal-Definition" class="headerlink" title="Formal Definition"></a>Formal Definition</h6><p>A Markov chain is defined by:</p>
+<ul>
+<li>A set of states $ S $.</li>
+<li>A transition probability matrix $ P $, where $ P_{ij} $ represents the probability of moving from state $ s_i $ to state $ s_j $. The full formula looks like below.</li>
+</ul>
+<p>$$ P(X_{t+1} &#x3D; s_j \mid X_t &#x3D; s_i) &#x3D; P_{ij} $$</p>
+<h4 id="Markov-Process"><a href="#Markov-Process" class="headerlink" title="Markov Process"></a>Markov Process</h4><p>A Markov process is a more general concept that includes both discrete and continuous cases. It is characterized by:</p>
+<ol>
+<li><strong>State Space</strong>: The set of possible states can be discrete (finite or countable) or continuous.</li>
+<li><strong>Time Steps</strong>: The process can evolve in either discrete time steps (like in a Markov chain) or continuous time.</li>
+<li><strong>Markov Property</strong>: Similar to the Markov chain, the future state depends only on the current state and not on past states.</li>
+</ol>
+<h4 id="Types-of-Markov-Processes"><a href="#Types-of-Markov-Processes" class="headerlink" title="Types of Markov Processes"></a>Types of Markov Processes</h4><ol>
+<li><p><strong>Discrete-Time Markov Process (Markov Chain)</strong>:</p>
+<ul>
+<li>As described above, it deals with discrete states and discrete time steps.</li>
+</ul>
+</li>
+<li><p><strong>Continuous-Time Markov Process</strong>:</p>
+<ul>
+<li>The state space can be discrete or continuous.</li>
+<li>The process evolves continuously over time.</li>
+<li>Transition probabilities are often described using a rate matrix (or generator matrix) instead of a transition matrix.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Continuous-Time Markov Chain (CTMC)</strong></p>
+<p>A CTMC is a specific type of Markov process where:</p>
+<p>· The state space is discrete.<br>· Time is continuous.<br>· The transitions are governed by rates, often described using a rate matrix $ Q $.</p>
+<h4 id="Summary-of-Differences"><a href="#Summary-of-Differences" class="headerlink" title="Summary of Differences"></a>Summary of Differences</h4><ul>
+<li><p><strong>State Space</strong>:</p>
+<ul>
+<li><strong>Markov Chain</strong>: Discrete state space.</li>
+<li><strong>Markov Process</strong>: Can be discrete or continuous state space.</li>
+</ul>
+</li>
+<li><p><strong>Time</strong>:</p>
+<ul>
+<li><strong>Markov Chain</strong>: Discrete time steps.</li>
+<li><strong>Markov Process</strong>: Can be discrete or continuous time.</li>
+</ul>
+</li>
+<li><p><strong>Transition Mechanism</strong>:</p>
+<ul>
+<li><strong>Markov Chain</strong>: Defined by a transition probability matrix.</li>
+<li><strong>Markov Process</strong>: Defined by transition probabilities for discrete time or transition rates for continuous time.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Markov-Chain-Discrete-Time-Discrete-State"><a href="#Markov-Chain-Discrete-Time-Discrete-State" class="headerlink" title="Markov Chain (Discrete-Time, Discrete State)"></a>Markov Chain (Discrete-Time, Discrete State)</h4><p>Consider a simple weather model with three states: Sunny, Cloudy, and Rainy. The transitions are defined for each day (discrete time steps).</p>
+<ul>
+<li><p>States: $ S &#x3D; { \text{Sunny}, \text{Cloudy}, \text{Rainy} } $</p>
+</li>
+<li><p>Transition Matrix $ P $:</p>
+<p>$$<br>P &#x3D; \begin{pmatrix}<br>0.7 &amp; 0.2 &amp; 0.1 \cr<br>0.3 &amp; 0.4 &amp; 0.3 \cr<br>0.2 &amp; 0.3 &amp; 0.5<br>\end{pmatrix}<br>$$</p>
+</li>
+</ul>
+<h4 id="Continuous-Time-Markov-Process-Continuous-Time-Discrete-State"><a href="#Continuous-Time-Markov-Process-Continuous-Time-Discrete-State" class="headerlink" title="Continuous-Time Markov Process (Continuous-Time, Discrete State)"></a>Continuous-Time Markov Process (Continuous-Time, Discrete State)</h4><p>Consider a population model where individuals can be in different health states: Healthy, Sick, and Recovered. The transitions happen continuously over time, with certain rates.</p>
+<ul>
+<li><p>States: $ S &#x3D; { \text{Healthy}, \text{Sick}, \text{Recovered} } $</p>
+</li>
+<li><p>Rate Matrix $ Q $:</p>
+<p>$$<br>Q &#x3D; \begin{pmatrix}<br>-\lambda &amp; \lambda &amp; 0 \cr<br>0 &amp; -\mu &amp; \mu \cr<br>0 &amp; 0 &amp; 0<br>\end{pmatrix}<br>$$</p>
+</li>
+</ul>
+<p>where $\lambda$ is the rate of getting sick, and $\mu$ is the rate of recovery.</p>
+<p>In summary, a Markov chain is a special case of a Markov process with discrete states and discrete time steps, whereas a Markov process can have a broader definition, encompassing both discrete and continuous states and time.</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/nlp-docs/2024/07/17/problem-solving/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Problem Solving
+                
+            </div>
+        </a>
+    
+    
+        <a href="/nlp-docs/2024/07/14/audo-diff/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Auto Differentiation</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside id="sidebar-right">
+                <aside id="right-sidebar">
+    <div class="timeline-container">
+        
+                <!-- Year Marker -->
+                <div class="timeline-row timeline-year">
+                    <span class="timeline-icon"><i class="fa fa-calendar-o"></i></span>
+                    <h2 class="timeline-title">2024</h2>
+                </div>
+        
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-11 (2)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/11/23/measuring-subjectivity/">Measuring Subjectivity</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-11-23</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/11/18/sgd/">Understanding SGD</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-11-18</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-09 (5)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/29/quant-belief/">Quantifying Beliefs</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-29</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/17/compositionality/">Compositionality</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/determinism/">Intro to Determinism</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/intentionality/">Naturalizing Intentions</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/09/02/qulia/">Understanding Qualia</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-09-02</span>
+                        <span><i class="fa fa-folder-open"></i> Other</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-08 (4)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/17/transformer/">The GPT Architecture</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-17</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/13/mdn-nlp/">Contemporary NLP</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-13</span>
+                        <span><i class="fa fa-folder-open"></i> NLP Related</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/13/philo-o-mind/">Philosophy of Mind</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-13</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/08/03/mutual-info/">Mutual Information</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-08-03</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+                    </div> <!-- Close previous month's timeline-posts -->
+                
+                <!-- Month Marker -->
+                <div class="timeline-row timeline-month">
+                    <span class="timeline-icon"><i class="fa fa-calendar"></i></span>
+                    <h3 class="timeline-title">2024-07 (7)</h3>
+                </div>
+                <div class="timeline-posts"> <!-- Open a new month's timeline-posts -->
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/27/vae/">Variational Families</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-27</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/23/viterbi/">Viterbi Algorithm</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-23</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/17/jacobian-matrices/">Jacobian Matrices</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/17/problem-solving/">Problem Solving</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-17</span>
+                        <span><i class="fa fa-folder-open"></i> Linguistics</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/16/markov-chains/">Markov Processes</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-16</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/14/audo-diff/">Auto Differentiation</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-14</span>
+                        <span><i class="fa fa-folder-open"></i> Math</span>
+                    </div>
+                </div>
+            </div>
+
+        
+
+            <!-- Post Entry -->
+            <div class="timeline-row timeline-post">
+                <span class="timeline-icon"></span>
+                <div class="timeline-content">
+                    <h4 class="timeline-post-title"><a href="https://shiyisteezin.github.io/nlp-docs/2024/07/11/place-holder/">Intro &amp; Overview</a></h4>
+                    <div class="timeline-post-meta">
+                        <span><i class="fa fa-calendar"></i> 2024-07-11</span>
+                        <span><i class="fa fa-folder-open"></i> </span>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div> <!-- Close the last month's timeline-posts -->
+    </div>
+</aside>
+
+            </aside>
+
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            Shiyi S &copy; 2024 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+        </div>
+    </div>
+</footer>
+
+        
+    
+        
+<script src="/nlp-docs/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/nlp-docs/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/nlp-docs/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="/nlp-docs/js/main.js"></script>
+    <script src="/nlp-docs/js/dots.js"></script>
+    <script src="/nlp-docs/js/yt-bars.js"></script>
+
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/nlp-docs/js/main.js"></script>
+
+
+    </div>
+</html>
