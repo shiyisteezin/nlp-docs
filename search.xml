@@ -193,69 +193,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Naturalizing Intentions</title>
-    <url>/nlp-docs/2024/09/02/intentionality/</url>
-    <content><![CDATA[<h3 id="The-Hard-Problem-in-Naturalizing-Intentionality"><a href="#The-Hard-Problem-in-Naturalizing-Intentionality" class="headerlink" title="The Hard Problem in Naturalizing Intentionality"></a><strong>The Hard Problem in Naturalizing Intentionality</strong></h3><p>The <strong>Hard Problem of Intentionality</strong> mirrors the broader <strong>Hard Problem of Consciousness</strong>, focusing on a specific aspect of mental life: <strong>intentionality</strong>—the mind’s ability to represent, think about, or be “about” things. Both problems grapple with the difficulty of explaining <em>subjective mental phenomena</em> in purely naturalistic or physical terms.</p>
-<p>Let’s break this down into key concepts and challenges in a comprehensive way:</p>
-<h3 id="1-What-is-Intentionality"><a href="#1-What-is-Intentionality" class="headerlink" title="1. What is Intentionality?"></a>1. <strong>What is Intentionality?</strong></h3><p><strong>Intentionality</strong> is the capacity of the mind to be directed toward objects, states, or events. When we think, perceive, believe, or desire, our mental states are always <em>about</em> something:</p>
-<ul>
-<li>Thinking about a tree.</li>
-<li>Perceiving the sound of a car horn.</li>
-<li>Believing that it will rain tomorrow.</li>
-</ul>
-<p>This “aboutness”—the idea that our thoughts are directed at or represent things—is what makes intentionality a unique feature of the mind. The mind doesn’t just generate random activity; it <em>represents</em> things in the world.</p>
-<h3 id="2-The-Naturalization-of-Intentionality"><a href="#2-The-Naturalization-of-Intentionality" class="headerlink" title="2. The Naturalization of Intentionality"></a>2. <strong>The Naturalization of Intentionality</strong></h3><p>The goal of <strong>naturalizing intentionality</strong> is to explain this mental “aboutness” in terms of <strong>physical processes</strong>, such as brain activity, evolutionary biology, or cognitive systems. Naturalism seeks to show how the mind’s ability to represent the world can be explained as part of the natural world, without invoking anything supernatural or mysterious.</p>
-<p>Many philosophers and cognitive scientists believe that intentionality can be reduced to <strong>causal relationships</strong>, <strong>information processing</strong>, or <strong>evolutionary functions</strong>. For example:</p>
-<ul>
-<li><strong>Causal Theories</strong> suggest that our mental representations are caused by the things they represent. You have a mental image of a tree because the tree caused certain sensory processes (light entering the eyes, neurons firing, etc.).</li>
-<li><strong>Teleosemantics</strong> explains intentionality in terms of <strong>biological functions</strong>: a mental state represents something because it evolved to fulfill a particular function, such as guiding behavior in response to environmental stimuli.</li>
-<li><strong>Information-Theoretic Approaches</strong> view mental states as <strong>information processors</strong>, analogous to computers that process inputs and outputs, where the inputs are representations of the external world.</li>
-</ul>
-<h3 id="3-The-Subjective-Nature-of-Intentionality-The-Hard-Problem"><a href="#3-The-Subjective-Nature-of-Intentionality-The-Hard-Problem" class="headerlink" title="3. The Subjective Nature of Intentionality: The Hard Problem"></a>3. <strong>The Subjective Nature of Intentionality: The Hard Problem</strong></h3><p>Despite these approaches, many philosophers argue that these <strong>naturalistic explanations leave out something essential</strong>—the <strong>subjective aspect</strong> of intentionality. This is known as the <strong>Hard Problem of Intentionality</strong>.</p>
-<h4 id="A-Subjective-“Aboutness”"><a href="#A-Subjective-“Aboutness”" class="headerlink" title="A. Subjective “Aboutness”"></a>A. <strong>Subjective “Aboutness”</strong></h4><p>At the heart of the hard problem is the issue of <strong>subjectivity</strong>. When you have a thought about a tree, that thought is experienced from your <strong>first-person perspective</strong>. It’s not just that brain activity happens; you <strong>experience</strong> that thought as being about something in the world. This subjective experience of “aboutness” seems qualitatively different from the purely physical processes that naturalistic theories describe.</p>
-<p>For example:</p>
-<ul>
-<li>A causal theory might explain that seeing a tree causes certain brain states, but <strong>why does that brain state have the subjective character of “being about a tree”?</strong></li>
-<li>Teleosemantics might explain that certain brain processes evolved to represent environmental features for survival, but <strong>how does that give rise to the feeling of “thinking about” something in a first-person, subjective way?</strong></li>
-</ul>
-<p>This challenge is often compared to the <strong>Hard Problem of Consciousness</strong>, which philosopher <strong>David Chalmers</strong> famously articulated. The hard problem of consciousness asks how **subjective experience (qualia)**—the “what it’s like” aspect of experience—arises from physical processes in the brain. Similarly, the hard problem of intentionality asks how the subjective aspect of intentionality arises from natural processes.</p>
-<h4 id="B-Intentionality-as-Normative"><a href="#B-Intentionality-as-Normative" class="headerlink" title="B. Intentionality as Normative"></a>B. <strong>Intentionality as Normative</strong></h4><p>Another element that naturalistic explanations struggle with is the <strong>normativity</strong> of intentionality. Intentional states are not just about things—they can also be <strong>correct</strong> or <strong>incorrect</strong>. For example:</p>
-<ul>
-<li>If you believe that the sky is blue, and it is blue, your belief is <strong>correct</strong>.</li>
-<li>If you believe the sky is green, your belief is <strong>incorrect</strong>.</li>
-</ul>
-<p>This capacity for mental states to be <strong>evaluated</strong> (correct vs. incorrect) makes intentionality normative—mental states can succeed or fail at representing the world. The hard problem of intentionality asks how <strong>purely physical processes</strong> (which are generally described in <strong>descriptive</strong>, not normative, terms) can give rise to <strong>normative mental properties</strong>.</p>
-<h3 id="4-How-is-This-Like-the-Hard-Problem-of-Consciousness"><a href="#4-How-is-This-Like-the-Hard-Problem-of-Consciousness" class="headerlink" title="4. How is This Like the Hard Problem of Consciousness?"></a>4. <strong>How is This Like the Hard Problem of Consciousness?</strong></h3><p>The hard problem of intentionality is closely related to the hard problem of consciousness because both deal with <strong>subjective experience</strong> and its relationship to physical processes. In both cases, naturalistic explanations tend to focus on the <strong>objective</strong>, <strong>third-person</strong> description of processes, but they struggle to account for the <strong>first-person experience</strong> of those processes.</p>
-<ul>
-<li>The <strong>hard problem of consciousness</strong> asks: “How do <strong>subjective experiences</strong> (what it’s like to feel pain, see red, etc.) arise from the firing of neurons in the brain?”</li>
-<li>The <strong>hard problem of intentionality</strong> asks: “How does the mind’s ability to be <em>about</em> things (representing a tree, desiring an outcome, etc.) arise from brain activity and causal relationships?”</li>
-</ul>
-<p>In both cases, the difficulty is explaining the <strong>qualitative, subjective</strong> aspect of mental life, which seems to resist explanation in terms of <strong>objective physical processes</strong>.</p>
-<h3 id="5-Philosophical-Challenges"><a href="#5-Philosophical-Challenges" class="headerlink" title="5. Philosophical Challenges"></a>5. <strong>Philosophical Challenges</strong></h3><p>There are several reasons why naturalizing intentionality faces deep philosophical challenges:</p>
-<h4 id="A-The-Explanatory-Gap"><a href="#A-The-Explanatory-Gap" class="headerlink" title="A. The Explanatory Gap"></a>A. <strong>The Explanatory Gap</strong></h4><p>Just as with consciousness, there seems to be an <strong>explanatory gap</strong> between physical processes and the subjective “aboutness” of intentionality. Even if we can fully map the brain processes involved in thinking about a tree, it’s unclear <strong>how</strong> or <strong>why</strong> those processes lead to the experience of <em>“thinking about the tree.”</em></p>
-<p>This gap is sometimes described as a <strong>difference in kinds</strong>: physical processes and subjective intentional states are so different in their nature that it’s hard to see how one could reduce to or explain the other.</p>
-<h4 id="B-Non-reductive-Views"><a href="#B-Non-reductive-Views" class="headerlink" title="B. Non-reductive Views"></a>B. <strong>Non-reductive Views</strong></h4><p>Some philosophers argue that intentionality, like consciousness, might not be <strong>reducible</strong> to physical processes. <strong>Non-reductive physicalism</strong> or <strong>property dualism</strong> are philosophical views suggesting that while mental states are grounded in the physical, they involve <strong>emergent properties</strong> that cannot be fully explained by physical processes alone.</p>
-<p>For instance, <strong>John Searle</strong> argues that while intentionality is a biological feature of the brain, it cannot be reduced to mere causal or functional processes—it’s a higher-level feature that arises from, but isn’t identical to, brain processes.</p>
-<h4 id="C-Phenomenology-and-First-Person-Perspective"><a href="#C-Phenomenology-and-First-Person-Perspective" class="headerlink" title="C. Phenomenology and First-Person Perspective"></a>C. <strong>Phenomenology and First-Person Perspective</strong></h4><p><strong>Phenomenologists</strong>, like <strong>Edmund Husserl</strong> and <strong>Maurice Merleau-Ponty</strong>, argue that intentionality can only be fully understood by focusing on the <strong>first-person experience</strong> of being directed toward the world. They believe that trying to reduce intentionality to objective, third-person descriptions (such as causal processes or information flow) misses its core feature: the <strong>lived, subjective experience</strong> of being directed toward the world.</p>
-<h3 id="6-Responses-to-the-Hard-Problem-of-Intentionality"><a href="#6-Responses-to-the-Hard-Problem-of-Intentionality" class="headerlink" title="6. Responses to the Hard Problem of Intentionality"></a>6. <strong>Responses to the Hard Problem of Intentionality</strong></h3><p>Some responses to the hard problem of intentionality propose that the subjective aspect of intentionality might not be as intractable as it seems:</p>
-<ul>
-<li><p><strong>Cognitive Science</strong>: Some cognitive scientists believe that advances in understanding the brain’s <strong>computational processes</strong> will eventually bridge the gap. By explaining how the brain processes information, stores representations, and learns from the environment, they hope to explain the <strong>emergence of intentionality</strong> in a way that accounts for both its subjective and objective aspects.</p>
-</li>
-<li><p><strong>Emergentism</strong>: Some philosophers suggest that intentionality is an <strong>emergent property</strong> of complex brain systems. While the individual parts of the brain may not be intentional, intentionality may emerge from the complex interaction of those parts. However, explaining how emergence happens in detail remains a challenge.</p>
-</li>
-<li><p><strong>Panpsychism</strong>: In a more radical response, some philosophers (like <strong>David Chalmers</strong>) propose <strong>panpsychism</strong>, the view that consciousness (and perhaps intentionality) is a fundamental feature of the universe, much like space, time, or matter. In this view, intentionality wouldn’t need to be “reduced” to physical processes because it would be a <strong>basic feature</strong> of reality.</p>
-</li>
-</ul>
-<h3 id="7-Conclusion"><a href="#7-Conclusion" class="headerlink" title="7. Conclusion"></a>7. <strong>Conclusion</strong></h3><p>The <strong>Hard Problem of Intentionality</strong> raises profound questions about how the mind represents the world and how subjective mental states can arise from physical processes. While naturalistic theories of intentionality (like causal, teleosemantic, and information-theoretic approaches) have made progress in explaining aspects of mental representation, the <strong>subjective aspect of intentionality</strong>—the first-person experience of “aboutness”—remains elusive. This challenge parallels the <strong>Hard Problem of Consciousness</strong>, leaving open fundamental questions about the nature of the mind and its relationship to the physical world.</p>
-]]></content>
-      <categories>
-        <category>Other</category>
-      </categories>
-      <tags>
-        <tag>nlp-theories</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Jacobian Matrices</title>
     <url>/nlp-docs/2024/07/17/jacobian-matrices/</url>
     <content><![CDATA[<h3 id="Discussions-on-Jacobian-Matrices-Continued"><a href="#Discussions-on-Jacobian-Matrices-Continued" class="headerlink" title="Discussions on Jacobian Matrices Continued"></a>Discussions on Jacobian Matrices Continued</h3><p>This blog will break down and continue explaining Jacobian matrices and Taylor expansions in plain language and explore how they are connected.</p>
@@ -317,6 +254,69 @@ $$ \text{Jacobian} = \begin{pmatrix}
       <tags>
         <tag>math</tag>
         <tag>determinism</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Naturalizing Intentions</title>
+    <url>/nlp-docs/2024/09/02/intentionality/</url>
+    <content><![CDATA[<h3 id="The-Hard-Problem-in-Naturalizing-Intentionality"><a href="#The-Hard-Problem-in-Naturalizing-Intentionality" class="headerlink" title="The Hard Problem in Naturalizing Intentionality"></a><strong>The Hard Problem in Naturalizing Intentionality</strong></h3><p>The <strong>Hard Problem of Intentionality</strong> mirrors the broader <strong>Hard Problem of Consciousness</strong>, focusing on a specific aspect of mental life: <strong>intentionality</strong>—the mind’s ability to represent, think about, or be “about” things. Both problems grapple with the difficulty of explaining <em>subjective mental phenomena</em> in purely naturalistic or physical terms.</p>
+<p>Let’s break this down into key concepts and challenges in a comprehensive way:</p>
+<h3 id="1-What-is-Intentionality"><a href="#1-What-is-Intentionality" class="headerlink" title="1. What is Intentionality?"></a>1. <strong>What is Intentionality?</strong></h3><p><strong>Intentionality</strong> is the capacity of the mind to be directed toward objects, states, or events. When we think, perceive, believe, or desire, our mental states are always <em>about</em> something:</p>
+<ul>
+<li>Thinking about a tree.</li>
+<li>Perceiving the sound of a car horn.</li>
+<li>Believing that it will rain tomorrow.</li>
+</ul>
+<p>This “aboutness”—the idea that our thoughts are directed at or represent things—is what makes intentionality a unique feature of the mind. The mind doesn’t just generate random activity; it <em>represents</em> things in the world.</p>
+<h3 id="2-The-Naturalization-of-Intentionality"><a href="#2-The-Naturalization-of-Intentionality" class="headerlink" title="2. The Naturalization of Intentionality"></a>2. <strong>The Naturalization of Intentionality</strong></h3><p>The goal of <strong>naturalizing intentionality</strong> is to explain this mental “aboutness” in terms of <strong>physical processes</strong>, such as brain activity, evolutionary biology, or cognitive systems. Naturalism seeks to show how the mind’s ability to represent the world can be explained as part of the natural world, without invoking anything supernatural or mysterious.</p>
+<p>Many philosophers and cognitive scientists believe that intentionality can be reduced to <strong>causal relationships</strong>, <strong>information processing</strong>, or <strong>evolutionary functions</strong>. For example:</p>
+<ul>
+<li><strong>Causal Theories</strong> suggest that our mental representations are caused by the things they represent. You have a mental image of a tree because the tree caused certain sensory processes (light entering the eyes, neurons firing, etc.).</li>
+<li><strong>Teleosemantics</strong> explains intentionality in terms of <strong>biological functions</strong>: a mental state represents something because it evolved to fulfill a particular function, such as guiding behavior in response to environmental stimuli.</li>
+<li><strong>Information-Theoretic Approaches</strong> view mental states as <strong>information processors</strong>, analogous to computers that process inputs and outputs, where the inputs are representations of the external world.</li>
+</ul>
+<h3 id="3-The-Subjective-Nature-of-Intentionality-The-Hard-Problem"><a href="#3-The-Subjective-Nature-of-Intentionality-The-Hard-Problem" class="headerlink" title="3. The Subjective Nature of Intentionality: The Hard Problem"></a>3. <strong>The Subjective Nature of Intentionality: The Hard Problem</strong></h3><p>Despite these approaches, many philosophers argue that these <strong>naturalistic explanations leave out something essential</strong>—the <strong>subjective aspect</strong> of intentionality. This is known as the <strong>Hard Problem of Intentionality</strong>.</p>
+<h4 id="A-Subjective-“Aboutness”"><a href="#A-Subjective-“Aboutness”" class="headerlink" title="A. Subjective “Aboutness”"></a>A. <strong>Subjective “Aboutness”</strong></h4><p>At the heart of the hard problem is the issue of <strong>subjectivity</strong>. When you have a thought about a tree, that thought is experienced from your <strong>first-person perspective</strong>. It’s not just that brain activity happens; you <strong>experience</strong> that thought as being about something in the world. This subjective experience of “aboutness” seems qualitatively different from the purely physical processes that naturalistic theories describe.</p>
+<p>For example:</p>
+<ul>
+<li>A causal theory might explain that seeing a tree causes certain brain states, but <strong>why does that brain state have the subjective character of “being about a tree”?</strong></li>
+<li>Teleosemantics might explain that certain brain processes evolved to represent environmental features for survival, but <strong>how does that give rise to the feeling of “thinking about” something in a first-person, subjective way?</strong></li>
+</ul>
+<p>This challenge is often compared to the <strong>Hard Problem of Consciousness</strong>, which philosopher <strong>David Chalmers</strong> famously articulated. The hard problem of consciousness asks how **subjective experience (qualia)**—the “what it’s like” aspect of experience—arises from physical processes in the brain. Similarly, the hard problem of intentionality asks how the subjective aspect of intentionality arises from natural processes.</p>
+<h4 id="B-Intentionality-as-Normative"><a href="#B-Intentionality-as-Normative" class="headerlink" title="B. Intentionality as Normative"></a>B. <strong>Intentionality as Normative</strong></h4><p>Another element that naturalistic explanations struggle with is the <strong>normativity</strong> of intentionality. Intentional states are not just about things—they can also be <strong>correct</strong> or <strong>incorrect</strong>. For example:</p>
+<ul>
+<li>If you believe that the sky is blue, and it is blue, your belief is <strong>correct</strong>.</li>
+<li>If you believe the sky is green, your belief is <strong>incorrect</strong>.</li>
+</ul>
+<p>This capacity for mental states to be <strong>evaluated</strong> (correct vs. incorrect) makes intentionality normative—mental states can succeed or fail at representing the world. The hard problem of intentionality asks how <strong>purely physical processes</strong> (which are generally described in <strong>descriptive</strong>, not normative, terms) can give rise to <strong>normative mental properties</strong>.</p>
+<h3 id="4-How-is-This-Like-the-Hard-Problem-of-Consciousness"><a href="#4-How-is-This-Like-the-Hard-Problem-of-Consciousness" class="headerlink" title="4. How is This Like the Hard Problem of Consciousness?"></a>4. <strong>How is This Like the Hard Problem of Consciousness?</strong></h3><p>The hard problem of intentionality is closely related to the hard problem of consciousness because both deal with <strong>subjective experience</strong> and its relationship to physical processes. In both cases, naturalistic explanations tend to focus on the <strong>objective</strong>, <strong>third-person</strong> description of processes, but they struggle to account for the <strong>first-person experience</strong> of those processes.</p>
+<ul>
+<li>The <strong>hard problem of consciousness</strong> asks: “How do <strong>subjective experiences</strong> (what it’s like to feel pain, see red, etc.) arise from the firing of neurons in the brain?”</li>
+<li>The <strong>hard problem of intentionality</strong> asks: “How does the mind’s ability to be <em>about</em> things (representing a tree, desiring an outcome, etc.) arise from brain activity and causal relationships?”</li>
+</ul>
+<p>In both cases, the difficulty is explaining the <strong>qualitative, subjective</strong> aspect of mental life, which seems to resist explanation in terms of <strong>objective physical processes</strong>.</p>
+<h3 id="5-Philosophical-Challenges"><a href="#5-Philosophical-Challenges" class="headerlink" title="5. Philosophical Challenges"></a>5. <strong>Philosophical Challenges</strong></h3><p>There are several reasons why naturalizing intentionality faces deep philosophical challenges:</p>
+<h4 id="A-The-Explanatory-Gap"><a href="#A-The-Explanatory-Gap" class="headerlink" title="A. The Explanatory Gap"></a>A. <strong>The Explanatory Gap</strong></h4><p>Just as with consciousness, there seems to be an <strong>explanatory gap</strong> between physical processes and the subjective “aboutness” of intentionality. Even if we can fully map the brain processes involved in thinking about a tree, it’s unclear <strong>how</strong> or <strong>why</strong> those processes lead to the experience of <em>“thinking about the tree.”</em></p>
+<p>This gap is sometimes described as a <strong>difference in kinds</strong>: physical processes and subjective intentional states are so different in their nature that it’s hard to see how one could reduce to or explain the other.</p>
+<h4 id="B-Non-reductive-Views"><a href="#B-Non-reductive-Views" class="headerlink" title="B. Non-reductive Views"></a>B. <strong>Non-reductive Views</strong></h4><p>Some philosophers argue that intentionality, like consciousness, might not be <strong>reducible</strong> to physical processes. <strong>Non-reductive physicalism</strong> or <strong>property dualism</strong> are philosophical views suggesting that while mental states are grounded in the physical, they involve <strong>emergent properties</strong> that cannot be fully explained by physical processes alone.</p>
+<p>For instance, <strong>John Searle</strong> argues that while intentionality is a biological feature of the brain, it cannot be reduced to mere causal or functional processes—it’s a higher-level feature that arises from, but isn’t identical to, brain processes.</p>
+<h4 id="C-Phenomenology-and-First-Person-Perspective"><a href="#C-Phenomenology-and-First-Person-Perspective" class="headerlink" title="C. Phenomenology and First-Person Perspective"></a>C. <strong>Phenomenology and First-Person Perspective</strong></h4><p><strong>Phenomenologists</strong>, like <strong>Edmund Husserl</strong> and <strong>Maurice Merleau-Ponty</strong>, argue that intentionality can only be fully understood by focusing on the <strong>first-person experience</strong> of being directed toward the world. They believe that trying to reduce intentionality to objective, third-person descriptions (such as causal processes or information flow) misses its core feature: the <strong>lived, subjective experience</strong> of being directed toward the world.</p>
+<h3 id="6-Responses-to-the-Hard-Problem-of-Intentionality"><a href="#6-Responses-to-the-Hard-Problem-of-Intentionality" class="headerlink" title="6. Responses to the Hard Problem of Intentionality"></a>6. <strong>Responses to the Hard Problem of Intentionality</strong></h3><p>Some responses to the hard problem of intentionality propose that the subjective aspect of intentionality might not be as intractable as it seems:</p>
+<ul>
+<li><p><strong>Cognitive Science</strong>: Some cognitive scientists believe that advances in understanding the brain’s <strong>computational processes</strong> will eventually bridge the gap. By explaining how the brain processes information, stores representations, and learns from the environment, they hope to explain the <strong>emergence of intentionality</strong> in a way that accounts for both its subjective and objective aspects.</p>
+</li>
+<li><p><strong>Emergentism</strong>: Some philosophers suggest that intentionality is an <strong>emergent property</strong> of complex brain systems. While the individual parts of the brain may not be intentional, intentionality may emerge from the complex interaction of those parts. However, explaining how emergence happens in detail remains a challenge.</p>
+</li>
+<li><p><strong>Panpsychism</strong>: In a more radical response, some philosophers (like <strong>David Chalmers</strong>) propose <strong>panpsychism</strong>, the view that consciousness (and perhaps intentionality) is a fundamental feature of the universe, much like space, time, or matter. In this view, intentionality wouldn’t need to be “reduced” to physical processes because it would be a <strong>basic feature</strong> of reality.</p>
+</li>
+</ul>
+<h3 id="7-Conclusion"><a href="#7-Conclusion" class="headerlink" title="7. Conclusion"></a>7. <strong>Conclusion</strong></h3><p>The <strong>Hard Problem of Intentionality</strong> raises profound questions about how the mind represents the world and how subjective mental states can arise from physical processes. While naturalistic theories of intentionality (like causal, teleosemantic, and information-theoretic approaches) have made progress in explaining aspects of mental representation, the <strong>subjective aspect of intentionality</strong>—the first-person experience of “aboutness”—remains elusive. This challenge parallels the <strong>Hard Problem of Consciousness</strong>, leaving open fundamental questions about the nature of the mind and its relationship to the physical world.</p>
+]]></content>
+      <categories>
+        <category>Other</category>
+      </categories>
+      <tags>
+        <tag>nlp-theories</tag>
       </tags>
   </entry>
   <entry>
@@ -886,26 +886,6 @@ $$ \text{Jacobian} = \begin{pmatrix}
       </tags>
   </entry>
   <entry>
-    <title>Intro &amp; Overview</title>
-    <url>/nlp-docs/2024/07/11/place-holder/</url>
-    <content><![CDATA[<h1 id="Hello-There-Welcome-To-This-Blog"><a href="#Hello-There-Welcome-To-This-Blog" class="headerlink" title="Hello There! Welcome To This Blog."></a><span id="title-intro">Hello There! Welcome To This Blog.</span></h1><p>I’m Shiyi. I’m deeply passionate about the intricate dance between data and innovation. With a fervent zeal for leveraging technology to extract insights and create a meaningful impact, I’ve embarked on a journey that spans the realms of Data Science, research, and creative expression.</p>
-<p><span class="label label-danger">Q</span> What drives my work in Data Science and Machine Learning?</span></p>
-<p><span class="label label-success">A</span> At the heart of my endeavors lies a profound appreciation for machine learning, deep learning, and Natural Language Processing. As an advocate for data-driven decision-making, I thrive on unraveling the complexities of algorithms and patterns, harnessing their power to transform raw data into actionable intelligence. From predictive modeling in finance to image recognition tasks using deep learning architectures, I relish the challenge of pushing the boundaries of what’s possible with data.</p>
-<p><span class="label label-danger">Q</span> What is my expertise in Natural Language Processing?</span></p>
-<p><span class="label label-success">A</span> My expertise extends to the captivating domain of Natural Language Processing. In an era inundated with information, I’m committed to empowering systems to understand, analyze, and generate insights from vast textual data. Whether it’s sentiment analysis to decipher the mood of social media conversations or language translation to bridge communication gaps, I’m fascinated by the potential of NLP to revolutionize how we interact with language.</p>
-<p><span class="label label-danger">Q</span> How do I combine creativity with my data-driven work?</span></p>
-<p><span class="label label-success">A</span> My passion for crafting extends beyond the digital realm to embrace a hands-on approach to creativity. From knitting intricate patterns inspired by my rabbit’s playful nature to sketching designed to stimulate curiosity and exploration, I find immense fulfillment in blending data-driven insights with the artistry of crafting.</p>
-<p><span class="label label-danger">Q</span> What is the essence of my journey?</span></p>
-<p><span class="label label-success">A</span> In essence, my journey is defined by a relentless pursuit of innovation, fueled by the boundless possibilities that arise at the nexus of data, creativity, and companionship. With each endeavor, I strive to push the boundaries of what’s possible, shaping a future where technology not only empowers but also enriches our lives in meaningful and unexpected ways. To channel such a passion, I created this blog to document the things I find helpful and important in understanding some of the most crucial concepts. I hope in such a format, I can grow with you or someone who is interested in learning these cool things.</p>
-<p><span class="label label-danger">Q</span> Is this the only blog? </span></p>
-<p><span class="label label-success">A</span> I have also created a separate blog for documenting the gists of NLP. This page will summarize important theories that lay the foundation for the development of AI, speech &amp; language processing, and computational linguistics to provide more context.</p>
-<h4></h4>
-]]></content>
-      <tags>
-        <tag>intro</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Problem Solving</title>
     <url>/nlp-docs/2024/07/17/problem-solving/</url>
     <content><![CDATA[<h3 id="More-on-Logic-And-Problem-Solving"><a href="#More-on-Logic-And-Problem-Solving" class="headerlink" title="More on Logic And Problem Solving"></a>More on Logic And Problem Solving</h3><p>In a different <a href="https://shiyis.github.io/nlpwme/modules/1h-semantics/">blog</a>, I have briefly introduced some of the most important concepts of logic and problem solving, including but not limited to predicate calculus, propositional logic, and lambda calculus.</p>
@@ -989,6 +969,26 @@ $$ \text{Jacobian} = \begin{pmatrix}
       </categories>
       <tags>
         <tag>semantics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Intro &amp; Overview</title>
+    <url>/nlp-docs/2024/07/11/place-holder/</url>
+    <content><![CDATA[<h1 id="Hello-There-Welcome-To-This-Blog"><a href="#Hello-There-Welcome-To-This-Blog" class="headerlink" title="Hello There! Welcome To This Blog."></a><span id="title-intro">Hello There! Welcome To This Blog.</span></h1><p>I’m Shiyi. I’m deeply passionate about the intricate dance between data and innovation. With a fervent zeal for leveraging technology to extract insights and create a meaningful impact, I’ve embarked on a journey that spans the realms of Data Science, research, and creative expression.</p>
+<p><span class="label label-danger">Q</span> What drives my work in Data Science and Machine Learning?</span></p>
+<p><span class="label label-success">A</span> At the heart of my endeavors lies a profound appreciation for machine learning, deep learning, and Natural Language Processing. As an advocate for data-driven decision-making, I thrive on unraveling the complexities of algorithms and patterns, harnessing their power to transform raw data into actionable intelligence. From predictive modeling in finance to image recognition tasks using deep learning architectures, I relish the challenge of pushing the boundaries of what’s possible with data.</p>
+<p><span class="label label-danger">Q</span> What is my expertise in Natural Language Processing?</span></p>
+<p><span class="label label-success">A</span> My expertise extends to the captivating domain of Natural Language Processing. In an era inundated with information, I’m committed to empowering systems to understand, analyze, and generate insights from vast textual data. Whether it’s sentiment analysis to decipher the mood of social media conversations or language translation to bridge communication gaps, I’m fascinated by the potential of NLP to revolutionize how we interact with language.</p>
+<p><span class="label label-danger">Q</span> How do I combine creativity with my data-driven work?</span></p>
+<p><span class="label label-success">A</span> My passion for crafting extends beyond the digital realm to embrace a hands-on approach to creativity. From knitting intricate patterns inspired by my rabbit’s playful nature to sketching designed to stimulate curiosity and exploration, I find immense fulfillment in blending data-driven insights with the artistry of crafting.</p>
+<p><span class="label label-danger">Q</span> What is the essence of my journey?</span></p>
+<p><span class="label label-success">A</span> In essence, my journey is defined by a relentless pursuit of innovation, fueled by the boundless possibilities that arise at the nexus of data, creativity, and companionship. With each endeavor, I strive to push the boundaries of what’s possible, shaping a future where technology not only empowers but also enriches our lives in meaningful and unexpected ways. To channel such a passion, I created this blog to document the things I find helpful and important in understanding some of the most crucial concepts. I hope in such a format, I can grow with you or someone who is interested in learning these cool things.</p>
+<p><span class="label label-danger">Q</span> Is this the only blog? </span></p>
+<p><span class="label label-success">A</span> I have also created a separate blog for documenting the gists of NLP. This page will summarize important theories that lay the foundation for the development of AI, speech &amp; language processing, and computational linguistics to provide more context.</p>
+<h4></h4>
+]]></content>
+      <tags>
+        <tag>intro</tag>
       </tags>
   </entry>
   <entry>
